@@ -65,4 +65,13 @@ baseline → candidate 的 paired delta=0.35，100 个 case clusters、2000 次 
 
 - Workspace/Research/OpenAI-compatible 实现：51 个 MockTransport 协议测试通过；网络超时、HTTP 错误、redirect 拒绝、能力范围、错误 trace、token usage/null 和凭证不回显已覆盖。
 - 未调用真实模型、Workspace 或 Research 服务；没有凭证/目标服务配置，不计作在线验证。可按 [连接契约](ADAPTER_CONTRACT.md) 和 [DEMO](DEMO.md) 的显式入口进行后续实测。
-- GitHub 远端 CI 与 PUBLIC 发布状态必须在真实推送后追加核验；页首 README badge 是实际 workflow 状态，不是手工“passed”标签。
+- 页首 README badge 是实际 workflow 状态，不是手工“passed”标签。
+
+
+## GitHub 公开发布后验
+
+- GitHub CLI 操作账号实际核验为 `FouHe0720`。
+- 创建并普通推送至 [FouHe0720/agentops-eval-platform](https://github.com/FouHe0720/agentops-eval-platform)，`gh repo view` 返回 `visibility=PUBLIC`。
+- 首次 V3 推送为 `9733246ac92cee11300ac7a798341ee594bea28d`；本地 HEAD 与远端 main 一致，工作树干净。
+- [首次远端 CI 运行](https://github.com/FouHe0720/agentops-eval-platform/actions/runs/39727220508) 已实际 **success**：Python 3.11 / 3.12 / 3.13 三个 job 全通过，各自 213 tests、Ruff、10-case 回归、数据重建与隐私审核通过。
+- 本条验收记录通过后续普通增量提交补入；最终 HEAD 见仓库 Git 历史与实际 workflow badge。未使用 force push。

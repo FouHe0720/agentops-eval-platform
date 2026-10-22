@@ -19,4 +19,4 @@ ruff + pytest + 10-case deterministic regression；完整 100-case × 3 对比�
 - V0 已验收：2 tests + CLI smoke，commit `140802d`。
 - V1 已验收：116 tests + 100×3 成对执行，commit `cb0c5c4`。
 - V2 已验收：212 tests + UI/API/隐私/容器，commit `63da1d8`。
-- V3：新增报告一致性回归后 213 tests 通过；独立空环境安装/Demo/服务已验证。公开发布状态以 `docs/VALIDATION.md` 和实际 GitHub 后验为准。
+- V3 已验收：213 tests；独立空环境安装/Demo/服务、Compose 全流程通过；commit `9733246` 已公开推送，Python 3.11/3.12/3.13 远端 CI 全通过。具体后验见 `docs/VALIDATION.md`。

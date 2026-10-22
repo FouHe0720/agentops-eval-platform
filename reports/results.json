@@ -1,0 +1,2828 @@
+{
+  "baseline_run_id": "51a697c673bc41748cfca56265a9a731",
+  "candidate_run_id": "78d75bfba9f744d3b95e20a2c504c18e",
+  "dataset_digest": "b00d4b1b785c20d9b0c3bcc23cb24d9ce71b42568244700623293ef59670c3fe",
+  "changed_config": [],
+  "paired_results": 300,
+  "case_clusters": 100,
+  "absolute_success_delta": 0.35,
+  "bootstrap_ci_95": [
+    0.26,
+    0.44
+  ],
+  "bootstrap_samples": 2000,
+  "warning": null,
+  "rows": [
+    {
+      "case_id": "arithmetic-001",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-001",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-001",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-002",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-002",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-002",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-003",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-003",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-003",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-004",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-004",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-004",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-005",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-005",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-005",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-006",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-006",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-006",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-007",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-007",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-007",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-008",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-008",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-008",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-009",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-009",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-009",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-010",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-010",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-010",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-011",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-011",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-011",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-012",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-012",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-012",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-013",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-013",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-013",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-014",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-014",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-014",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-015",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-015",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-015",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-016",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-016",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-016",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-017",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-017",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-017",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-018",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-018",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-018",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-019",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-019",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-019",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-020",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-020",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-020",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-021",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-021",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-021",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-022",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-022",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-022",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-023",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-023",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-023",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-024",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-024",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-024",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-025",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-025",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-025",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-026",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-026",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-026",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-027",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-027",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-027",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-028",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-028",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-028",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-029",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-029",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-029",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-030",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-030",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "arithmetic-030",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-001",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-001",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-001",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-002",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-002",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-002",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-003",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-003",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-003",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-004",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-004",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-004",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-005",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-005",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-005",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-006",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-006",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-006",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-007",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-007",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-007",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-008",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-008",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-008",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-009",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-009",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-009",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-010",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-010",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-010",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-011",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-011",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-011",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-012",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-012",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-012",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-013",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-013",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-013",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-014",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-014",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-014",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-015",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-015",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-015",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-016",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-016",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-016",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-017",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-017",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-017",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-018",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-018",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-018",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-019",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-019",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-019",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-020",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-020",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "long-input-020",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-001",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-001",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-001",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-002",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-002",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-002",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-003",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-003",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-003",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-004",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-004",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-004",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-005",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-005",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-005",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-006",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-006",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-006",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-007",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-007",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-007",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-008",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-008",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-008",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-009",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-009",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-009",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-010",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-010",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-010",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-011",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-011",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-011",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-012",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-012",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-012",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-013",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-013",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-013",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-014",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-014",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-014",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-015",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-015",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-015",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-016",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-016",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-016",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-017",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-017",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-017",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-018",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-018",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-018",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-019",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-019",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-019",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-020",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-020",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "recovery-020",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_execution_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-001",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-001",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-001",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-002",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-002",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-002",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-003",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-003",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-003",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-004",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-004",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-004",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-005",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-005",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-005",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-006",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-006",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-006",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-007",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-007",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-007",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-008",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-008",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-008",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-009",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-009",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-009",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-010",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-010",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-010",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-011",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-011",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-011",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-012",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-012",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-012",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-013",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-013",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-013",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-014",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-014",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-014",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-015",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-015",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-015",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-016",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-016",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-016",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-017",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-017",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-017",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-018",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-018",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-018",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-019",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-019",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-019",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-020",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-020",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-020",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-021",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-021",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-021",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-022",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-022",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-022",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-023",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-023",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-023",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-024",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-024",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-024",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-025",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-025",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-025",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-026",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-026",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-026",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-027",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-027",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-027",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-028",
+      "repeat": 0,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-028",
+      "repeat": 1,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-028",
+      "repeat": 2,
+      "baseline_success": true,
+      "candidate_success": true,
+      "delta": 0,
+      "baseline_failure": null,
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-029",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-029",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-029",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-030",
+      "repeat": 0,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-030",
+      "repeat": 1,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    },
+    {
+      "case_id": "retrieval-030",
+      "repeat": 2,
+      "baseline_success": false,
+      "candidate_success": true,
+      "delta": 1,
+      "baseline_failure": "tool_selection_error",
+      "candidate_failure": null
+    }
+  ],
+  "baseline_metrics": {
+    "total_results": 300,
+    "evaluated": 300,
+    "skipped": 0,
+    "task_success_rate": {
+      "value": 0.65,
+      "numerator": 195,
+      "denominator": 300
+    },
+    "tool_selection_accuracy": {
+      "value": 0.65,
+      "numerator": 195,
+      "denominator": 300
+    },
+    "tool_execution_success": {
+      "value": 0.868421052631579,
+      "numerator": 297,
+      "denominator": 342
+    },
+    "average_steps": {
+      "value": 1.14,
+      "numerator": 342,
+      "denominator": 300
+    },
+    "latency_ms": {
+      "p50": 0.35237349993622047,
+      "p95": 0.5764506499076562,
+      "mean": 0.38307390000151526,
+      "denominator": 300
+    },
+    "token_usage": {
+      "total": null,
+      "observed_model_calls": 0,
+      "model_calls": 0
+    },
+    "cost": {
+      "total": null,
+      "observed_model_calls": 0,
+      "model_calls": 0
+    },
+    "timeout_rate": {
+      "value": 0.0,
+      "numerator": 0,
+      "denominator": 300
+    },
+    "stability": {
+      "value": 1.0,
+      "numerator": 100,
+      "denominator": 100
+    },
+    "failure_counts": {
+      "tool_selection_error": 60,
+      "tool_execution_error": 45
+    },
+    "runner_retries": 0,
+    "tool_retry_events": 0
+  },
+  "candidate_metrics": {
+    "total_results": 300,
+    "evaluated": 300,
+    "skipped": 0,
+    "task_success_rate": {
+      "value": 1.0,
+      "numerator": 300,
+      "denominator": 300
+    },
+    "tool_selection_accuracy": {
+      "value": 1.0,
+      "numerator": 300,
+      "denominator": 300
+    },
+    "tool_execution_success": {
+      "value": 0.9044585987261147,
+      "numerator": 426,
+      "denominator": 471
+    },
+    "average_steps": {
+      "value": 1.57,
+      "numerator": 471,
+      "denominator": 300
+    },
+    "latency_ms": {
+      "p50": 0.2599359999067019,
+      "p95": 0.42922865013679257,
+      "mean": 0.28362700000040303,
+      "denominator": 300
+    },
+    "token_usage": {
+      "total": null,
+      "observed_model_calls": 0,
+      "model_calls": 0
+    },
+    "cost": {
+      "total": null,
+      "observed_model_calls": 0,
+      "model_calls": 0
+    },
+    "timeout_rate": {
+      "value": 0.0,
+      "numerator": 0,
+      "denominator": 300
+    },
+    "stability": {
+      "value": 1.0,
+      "numerator": 100,
+      "denominator": 100
+    },
+    "failure_counts": {},
+    "runner_retries": 0,
+    "tool_retry_events": 45
+  }
+}

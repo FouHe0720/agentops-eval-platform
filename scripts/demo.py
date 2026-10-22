@@ -90,6 +90,7 @@ async def run_demo(
     candidate = await execute_and_save(
         cases, "candidate_v2", config, store, runtime_dir / "candidate.json"
     )
+    records = {"baseline": baseline, "candidate": candidate}
     comparison = compare_runs(baseline, candidate)
     write_json(reports_dir / "results.json", comparison)
     write_comparison(comparison, reports_dir / "comparison.md")
@@ -105,6 +106,7 @@ async def run_demo(
         ablated = await execute_and_save(
             cases, "candidate_v2", ablated_config, store, runtime_dir / f"{name}.json"
         )
+        records[name] = ablated
         result = compare_runs(candidate, ablated, allow_ablation=True)
         ablations[name] = {key: value for key, value in result.items() if key != "rows"}
     ablation_report = {
@@ -116,6 +118,50 @@ async def run_demo(
     }
     write_json(reports_dir / "ablations.json", ablation_report)
     write_ablations(ablation_report, reports_dir / "ablations.md")
+    write_json(
+        reports_dir / "run_manifest.json",
+        {
+            "benchmark": BENCHMARK,
+            "seed": config.seed,
+            "cases": len(cases),
+            "repeats": config.repeats,
+            "dataset_digest": candidate.dataset_digest,
+            "runs": [
+                {
+                    "artifact": name,
+                    "run_id": record.run_id,
+                    "agent": record.agent,
+                    "created_at": record.created_at.isoformat(),
+                    "config": record.config.model_dump(mode="json"),
+                    "metrics": run_metrics(record),
+                }
+                for name, record in records.items()
+            ],
+        },
+    )
+    example = next(
+        (
+            result
+            for result in candidate.results
+            if result.repeat == 0
+            and result.category == "recovery"
+            and any(event.event_type == "retry" for event in result.trace.events)
+        ),
+        candidate.results[0],
+    )
+    with (reports_dir / "example-trace.jsonl").open("w", encoding="utf-8") as handle:
+        for event in example.trace.events:
+            handle.write(
+                json.dumps(
+                    {
+                        "case_id": example.case_id,
+                        "repeat": example.repeat,
+                        **event.model_dump(mode="json"),
+                    },
+                    ensure_ascii=False,
+                )
+                + "\n"
+            )
     return {
         "benchmark": BENCHMARK,
         "cases": len(cases),

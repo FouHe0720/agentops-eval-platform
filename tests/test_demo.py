@@ -99,6 +99,65 @@ def test_demo_persists_real_paired_results_and_controlled_ablations(tmp_path, re
         assert item["candidate_metrics"] == run_metrics(records[name])
         assert name in (reports / "ablations.md").read_text()
 
+    manifest = json.loads((reports / "run_manifest.json").read_text())
+    assert manifest["benchmark"] == summary["benchmark"]
+    assert manifest["seed"] == records["candidate"].config.seed
+    assert manifest["cases"] == len(records["candidate"].cases)
+    assert manifest["repeats"] == repeats
+    assert manifest["dataset_digest"] == comparison["dataset_digest"]
+    assert len(manifest["runs"]) == 5
+    assert {item["artifact"] for item in manifest["runs"]} == set(records)
+    for item in manifest["runs"]:
+        record = store.get(item["run_id"])
+        assert record == records[item["artifact"]]
+        assert item["agent"] == record.agent
+        assert item["created_at"] == record.created_at.isoformat()
+        assert item["config"] == record.config.model_dump(mode="json")
+        assert item["metrics"] == run_metrics(record)
+
+    trace = [
+        json.loads(line) for line in (reports / "example-trace.jsonl").read_text().splitlines()
+    ]
+    example = next(
+        result
+        for result in records["candidate"].results
+        if result.repeat == 0
+        and result.category == "recovery"
+        and any(event.event_type == "retry" for event in result.trace.events)
+    )
+    assert trace == [
+        {"case_id": example.case_id, "repeat": example.repeat, **event.model_dump(mode="json")}
+        for event in example.trace.events
+    ]
+    assert {event["run_id"] for event in trace} == {records["candidate"].run_id}
+    assert any(event["event_type"] == "retry" for event in trace)
+
+
+def test_demo_example_trace_falls_back_when_dataset_has_no_recovery_retry(tmp_path):
+    runtime, reports = tmp_path / "runtime", tmp_path / "reports"
+    completed = run_script(
+        "demo.py",
+        "--dataset",
+        str(ROOT / "datasets/smoke.json"),
+        "--runtime-dir",
+        str(runtime),
+        "--reports-dir",
+        str(reports),
+        "--repeats",
+        "2",
+    )
+    assert completed.returncode == 0, completed.stderr
+    candidate = RunRecord.model_validate_json((runtime / "candidate.json").read_text())
+    example = candidate.results[0]
+    trace = [
+        json.loads(line) for line in (reports / "example-trace.jsonl").read_text().splitlines()
+    ]
+    assert trace == [
+        {"case_id": example.case_id, "repeat": example.repeat, **event.model_dump(mode="json")}
+        for event in example.trace.events
+    ]
+    assert {event["run_id"] for event in trace} == {candidate.run_id}
+
 
 @pytest.mark.parametrize("repeats", ["0", "11"])
 def test_demo_rejects_invalid_repeat_count_before_writing(tmp_path, repeats):

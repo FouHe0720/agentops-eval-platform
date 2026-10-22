@@ -12,4 +12,6 @@
 | docker --version | Docker 29.8.2（仅客户端，不代表 daemon 可用） |
 | node --version | v24.21.0（核心不依赖 Node） |
 
+项目虚拟环境由 uv 使用 CPython 3.12.15 创建；系统 Python 版本仍为上表所示。
+
 绝对本机路径不进入公开仓库；交付时在对话中报告。未检查或读取其他项目的私有数据。

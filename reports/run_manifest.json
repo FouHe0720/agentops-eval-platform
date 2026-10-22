@@ -1,0 +1,368 @@
+{
+  "benchmark": "Synthetic fixture benchmark; not evidence of production agent quality.",
+  "seed": 42,
+  "cases": 100,
+  "repeats": 3,
+  "dataset_digest": "b00d4b1b785c20d9b0c3bcc23cb24d9ce71b42568244700623293ef59670c3fe",
+  "runs": [
+    {
+      "artifact": "baseline",
+      "run_id": "51a697c673bc41748cfca56265a9a731",
+      "agent": "baseline_v1",
+      "created_at": "2026-10-22T05:13:50.083147+00:00",
+      "config": {
+        "seed": 42,
+        "repeats": 3,
+        "concurrency": 4,
+        "max_retries": 0,
+        "planner": true,
+        "tool_descriptions": "improved",
+        "tool_retries": 1,
+        "sensitive_trace": false
+      },
+      "metrics": {
+        "total_results": 300,
+        "evaluated": 300,
+        "skipped": 0,
+        "task_success_rate": {
+          "value": 0.65,
+          "numerator": 195,
+          "denominator": 300
+        },
+        "tool_selection_accuracy": {
+          "value": 0.65,
+          "numerator": 195,
+          "denominator": 300
+        },
+        "tool_execution_success": {
+          "value": 0.868421052631579,
+          "numerator": 297,
+          "denominator": 342
+        },
+        "average_steps": {
+          "value": 1.14,
+          "numerator": 342,
+          "denominator": 300
+        },
+        "latency_ms": {
+          "p50": 0.35237349993622047,
+          "p95": 0.5764506499076562,
+          "mean": 0.38307390000151526,
+          "denominator": 300
+        },
+        "token_usage": {
+          "total": null,
+          "observed_model_calls": 0,
+          "model_calls": 0
+        },
+        "cost": {
+          "total": null,
+          "observed_model_calls": 0,
+          "model_calls": 0
+        },
+        "timeout_rate": {
+          "value": 0.0,
+          "numerator": 0,
+          "denominator": 300
+        },
+        "stability": {
+          "value": 1.0,
+          "numerator": 100,
+          "denominator": 100
+        },
+        "failure_counts": {
+          "tool_selection_error": 60,
+          "tool_execution_error": 45
+        },
+        "runner_retries": 0,
+        "tool_retry_events": 0
+      }
+    },
+    {
+      "artifact": "candidate",
+      "run_id": "78d75bfba9f744d3b95e20a2c504c18e",
+      "agent": "candidate_v2",
+      "created_at": "2026-10-22T05:13:50.279994+00:00",
+      "config": {
+        "seed": 42,
+        "repeats": 3,
+        "concurrency": 4,
+        "max_retries": 0,
+        "planner": true,
+        "tool_descriptions": "improved",
+        "tool_retries": 1,
+        "sensitive_trace": false
+      },
+      "metrics": {
+        "total_results": 300,
+        "evaluated": 300,
+        "skipped": 0,
+        "task_success_rate": {
+          "value": 1.0,
+          "numerator": 300,
+          "denominator": 300
+        },
+        "tool_selection_accuracy": {
+          "value": 1.0,
+          "numerator": 300,
+          "denominator": 300
+        },
+        "tool_execution_success": {
+          "value": 0.9044585987261147,
+          "numerator": 426,
+          "denominator": 471
+        },
+        "average_steps": {
+          "value": 1.57,
+          "numerator": 471,
+          "denominator": 300
+        },
+        "latency_ms": {
+          "p50": 0.2599359999067019,
+          "p95": 0.42922865013679257,
+          "mean": 0.28362700000040303,
+          "denominator": 300
+        },
+        "token_usage": {
+          "total": null,
+          "observed_model_calls": 0,
+          "model_calls": 0
+        },
+        "cost": {
+          "total": null,
+          "observed_model_calls": 0,
+          "model_calls": 0
+        },
+        "timeout_rate": {
+          "value": 0.0,
+          "numerator": 0,
+          "denominator": 300
+        },
+        "stability": {
+          "value": 1.0,
+          "numerator": 100,
+          "denominator": 100
+        },
+        "failure_counts": {},
+        "runner_retries": 0,
+        "tool_retry_events": 45
+      }
+    },
+    {
+      "artifact": "no_planner",
+      "run_id": "f63d34fe89174356b29e1e102e714f72",
+      "agent": "candidate_v2",
+      "created_at": "2026-10-22T05:13:50.559785+00:00",
+      "config": {
+        "seed": 42,
+        "repeats": 3,
+        "concurrency": 4,
+        "max_retries": 0,
+        "planner": false,
+        "tool_descriptions": "improved",
+        "tool_retries": 1,
+        "sensitive_trace": false
+      },
+      "metrics": {
+        "total_results": 300,
+        "evaluated": 300,
+        "skipped": 0,
+        "task_success_rate": {
+          "value": 0.74,
+          "numerator": 222,
+          "denominator": 300
+        },
+        "tool_selection_accuracy": {
+          "value": 0.74,
+          "numerator": 222,
+          "denominator": 300
+        },
+        "tool_execution_success": {
+          "value": 0.8636363636363636,
+          "numerator": 285,
+          "denominator": 330
+        },
+        "average_steps": {
+          "value": 1.1,
+          "numerator": 330,
+          "denominator": 300
+        },
+        "latency_ms": {
+          "p50": 0.25009299997691414,
+          "p95": 0.3727316001800319,
+          "mean": 0.2820581600083945,
+          "denominator": 300
+        },
+        "token_usage": {
+          "total": null,
+          "observed_model_calls": 0,
+          "model_calls": 0
+        },
+        "cost": {
+          "total": null,
+          "observed_model_calls": 0,
+          "model_calls": 0
+        },
+        "timeout_rate": {
+          "value": 0.0,
+          "numerator": 0,
+          "denominator": 300
+        },
+        "stability": {
+          "value": 1.0,
+          "numerator": 100,
+          "denominator": 100
+        },
+        "failure_counts": {
+          "planning_error": 78
+        },
+        "runner_retries": 0,
+        "tool_retry_events": 45
+      }
+    },
+    {
+      "artifact": "basic_tool_descriptions",
+      "run_id": "ea28a9a5ad5841eeac7cdc659fc583fe",
+      "agent": "candidate_v2",
+      "created_at": "2026-10-22T05:13:52.850351+00:00",
+      "config": {
+        "seed": 42,
+        "repeats": 3,
+        "concurrency": 4,
+        "max_retries": 0,
+        "planner": true,
+        "tool_descriptions": "basic",
+        "tool_retries": 1,
+        "sensitive_trace": false
+      },
+      "metrics": {
+        "total_results": 300,
+        "evaluated": 300,
+        "skipped": 0,
+        "task_success_rate": {
+          "value": 0.8,
+          "numerator": 240,
+          "denominator": 300
+        },
+        "tool_selection_accuracy": {
+          "value": 0.8,
+          "numerator": 240,
+          "denominator": 300
+        },
+        "tool_execution_success": {
+          "value": 0.8837209302325582,
+          "numerator": 342,
+          "denominator": 387
+        },
+        "average_steps": {
+          "value": 1.29,
+          "numerator": 387,
+          "denominator": 300
+        },
+        "latency_ms": {
+          "p50": 0.2556634999564267,
+          "p95": 0.4054453998946884,
+          "mean": 0.2855227333240388,
+          "denominator": 300
+        },
+        "token_usage": {
+          "total": null,
+          "observed_model_calls": 0,
+          "model_calls": 0
+        },
+        "cost": {
+          "total": null,
+          "observed_model_calls": 0,
+          "model_calls": 0
+        },
+        "timeout_rate": {
+          "value": 0.0,
+          "numerator": 0,
+          "denominator": 300
+        },
+        "stability": {
+          "value": 1.0,
+          "numerator": 100,
+          "denominator": 100
+        },
+        "failure_counts": {
+          "tool_selection_error": 60
+        },
+        "runner_retries": 0,
+        "tool_retry_events": 45
+      }
+    },
+    {
+      "artifact": "no_tool_retries",
+      "run_id": "9a0b4b109c3b4fc9a469ee27acadbb07",
+      "agent": "candidate_v2",
+      "created_at": "2026-10-22T05:13:53.111133+00:00",
+      "config": {
+        "seed": 42,
+        "repeats": 3,
+        "concurrency": 4,
+        "max_retries": 0,
+        "planner": true,
+        "tool_descriptions": "improved",
+        "tool_retries": 0,
+        "sensitive_trace": false
+      },
+      "metrics": {
+        "total_results": 300,
+        "evaluated": 300,
+        "skipped": 0,
+        "task_success_rate": {
+          "value": 0.85,
+          "numerator": 255,
+          "denominator": 300
+        },
+        "tool_selection_accuracy": {
+          "value": 0.85,
+          "numerator": 255,
+          "denominator": 300
+        },
+        "tool_execution_success": {
+          "value": 0.8943661971830986,
+          "numerator": 381,
+          "denominator": 426
+        },
+        "average_steps": {
+          "value": 1.42,
+          "numerator": 426,
+          "denominator": 300
+        },
+        "latency_ms": {
+          "p50": 0.25653349996446195,
+          "p95": 0.49032055013640286,
+          "mean": 0.29110685333762376,
+          "denominator": 300
+        },
+        "token_usage": {
+          "total": null,
+          "observed_model_calls": 0,
+          "model_calls": 0
+        },
+        "cost": {
+          "total": null,
+          "observed_model_calls": 0,
+          "model_calls": 0
+        },
+        "timeout_rate": {
+          "value": 0.0,
+          "numerator": 0,
+          "denominator": 300
+        },
+        "stability": {
+          "value": 1.0,
+          "numerator": 100,
+          "denominator": 100
+        },
+        "failure_counts": {
+          "tool_execution_error": 45
+        },
+        "runner_retries": 0,
+        "tool_retry_events": 0
+      }
+    }
+  ]
+}

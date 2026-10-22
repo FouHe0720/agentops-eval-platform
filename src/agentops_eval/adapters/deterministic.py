@@ -64,7 +64,7 @@ class DeterministicBaselineAgent:
                             return AgentResponse(
                                 answer="TOOL_FAILED", error_kind="tool_execution_error"
                             )
-                        with trace.span("retry", retry_index=attempt + 1):
+                        with trace.span("retry", tool_name="fetch", retry_index=attempt + 1):
                             pass
             if case.category == "long_input":
                 if data.get("invalid"):

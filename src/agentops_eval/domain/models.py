@@ -113,3 +113,24 @@ class RunRecord(Contract):
     config: RunConfig
     created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
     results: list[EvalResult]
+
+    @model_validator(mode="after")
+    def validate_results(self) -> "RunRecord":
+        case_ids = [case.case_id for case in self.cases]
+        if len(case_ids) != len(set(case_ids)):
+            raise ValueError("duplicate case_id")
+        keys = [(result.case_id, result.repeat) for result in self.results]
+        expected = {
+            (case_id, repeat) for case_id in case_ids for repeat in range(self.config.repeats)
+        }
+        if len(keys) != len(set(keys)) or set(keys) != expected:
+            raise ValueError("incomplete or duplicate case/repeat coverage")
+        lookup = {case.case_id: case for case in self.cases}
+        for result in self.results:
+            if result.run_id != self.run_id:
+                raise ValueError("result belongs to another run")
+            if result.category != lookup[result.case_id].category:
+                raise ValueError("result category mismatch")
+            if any(event.run_id != self.run_id for event in result.trace.events):
+                raise ValueError("trace belongs to another run")
+        return self

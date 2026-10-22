@@ -1,0 +1,532 @@
+[
+  {
+    "case_id": "arithmetic-001",
+    "task": "Use the calculator to add 0 and 0; return only the result.",
+    "category": "arithmetic",
+    "difficulty": "easy",
+    "expected_answer": "0",
+    "expected_tool_sequence": [
+      "calculator"
+    ],
+    "assertions": [],
+    "fixtures": {
+      "operation": "add",
+      "a": 0,
+      "b": 0
+    },
+    "timeout": 2.0,
+    "tags": [
+      "synthetic",
+      "seed-42",
+      "add",
+      "boundary"
+    ]
+  },
+  {
+    "case_id": "arithmetic-003",
+    "task": "Use the calculator to multiply -4 and -9; return only the result.",
+    "category": "arithmetic",
+    "difficulty": "easy",
+    "expected_answer": "36",
+    "expected_tool_sequence": [
+      "calculator"
+    ],
+    "assertions": [],
+    "fixtures": {
+      "operation": "multiply",
+      "a": -4,
+      "b": -9
+    },
+    "timeout": 2.0,
+    "tags": [
+      "synthetic",
+      "seed-42",
+      "multiply",
+      "boundary"
+    ]
+  },
+  {
+    "case_id": "arithmetic-007",
+    "task": "Use the calculator to add 0.5 and 0.25; return only the result.",
+    "category": "arithmetic",
+    "difficulty": "medium",
+    "expected_answer": "0.75",
+    "expected_tool_sequence": [
+      "calculator"
+    ],
+    "assertions": [],
+    "fixtures": {
+      "operation": "add",
+      "a": 0.5,
+      "b": 0.25
+    },
+    "timeout": 2.0,
+    "tags": [
+      "synthetic",
+      "seed-42",
+      "add",
+      "boundary"
+    ]
+  },
+  {
+    "case_id": "retrieval-001",
+    "task": "Search fixture filenames for the case-sensitive substring 'missing-00'. Read every matching file in fixture insertion order and join complete contents with '|'. Return NOT_FOUND if no filenames match.",
+    "category": "retrieval",
+    "difficulty": "easy",
+    "expected_answer": "NOT_FOUND",
+    "expected_tool_sequence": [
+      "search"
+    ],
+    "assertions": [
+      {
+        "kind": "not_contains",
+        "value": "Uppercase distractor"
+      }
+    ],
+    "fixtures": {
+      "files": {
+        "index.txt": "Synthetic index for topic-00; this filename is not a match."
+      },
+      "query": "missing-00",
+      "ambiguous": false,
+      "multi_step": true
+    },
+    "timeout": 2.0,
+    "tags": [
+      "synthetic",
+      "seed-42",
+      "clear-tools",
+      "multi-step",
+      "matches-0"
+    ]
+  },
+  {
+    "case_id": "retrieval-003",
+    "task": "Search fixture filenames for the case-sensitive substring 'topic-02'. Read every matching file in fixture insertion order and join complete contents with '|'. Return NOT_FOUND if no filenames match.",
+    "category": "retrieval",
+    "difficulty": "hard",
+    "expected_answer": "Section Z2|Section A2|Section M2",
+    "expected_tool_sequence": [
+      "search",
+      "read_file",
+      "read_file",
+      "read_file"
+    ],
+    "assertions": [
+      {
+        "kind": "not_contains",
+        "value": "Uppercase distractor"
+      }
+    ],
+    "fixtures": {
+      "files": {
+        "index.txt": "Synthetic index for topic-02; this filename is not a match.",
+        "z/topic-02-last.txt": "Section Z2",
+        "a/topic-02-first.txt": "Section A2",
+        "m/topic-02-middle.txt": "Section M2",
+        "distractors/TOPIC-02.txt": "Uppercase distractor 2"
+      },
+      "query": "topic-02",
+      "ambiguous": true,
+      "multi_step": true
+    },
+    "timeout": 2.0,
+    "tags": [
+      "synthetic",
+      "seed-42",
+      "ambiguous-tools",
+      "multi-step",
+      "matches-3"
+    ]
+  },
+  {
+    "case_id": "retrieval-005",
+    "task": "Search fixture filenames for the case-sensitive substring 'topic-04'. Read every matching file in fixture insertion order and join complete contents with '|'. Return NOT_FOUND if no filenames match.",
+    "category": "retrieval",
+    "difficulty": "hard",
+    "expected_answer": "|Synthetic detail 4\nSecond line.",
+    "expected_tool_sequence": [
+      "search",
+      "read_file",
+      "read_file"
+    ],
+    "assertions": [
+      {
+        "kind": "not_contains",
+        "value": "Uppercase distractor"
+      }
+    ],
+    "fixtures": {
+      "files": {
+        "index.txt": "Synthetic index for topic-04; this filename is not a match.",
+        "notes/topic-04-empty.txt": "",
+        "notes/topic-04-detail.txt": "Synthetic detail 4\nSecond line.",
+        "distractors/TOPIC-04.txt": "Uppercase distractor 4"
+      },
+      "query": "topic-04",
+      "ambiguous": true,
+      "multi_step": true
+    },
+    "timeout": 2.0,
+    "tags": [
+      "synthetic",
+      "seed-42",
+      "ambiguous-tools",
+      "multi-step",
+      "matches-2"
+    ]
+  },
+  {
+    "case_id": "recovery-001",
+    "task": "Fetch the synthetic service payload. Retry a transient tool failure once if needed, then return the complete payload unchanged.",
+    "category": "recovery",
+    "difficulty": "easy",
+    "expected_answer": "Synthetic payload 0: complete.",
+    "expected_tool_sequence": [
+      "fetch"
+    ],
+    "assertions": [
+      {
+        "kind": "not_contains",
+        "value": "TOOL_FAILED"
+      }
+    ],
+    "fixtures": {
+      "failures_before_success": 0,
+      "payload": "Synthetic payload 0: complete."
+    },
+    "timeout": 2.0,
+    "tags": [
+      "synthetic",
+      "seed-42",
+      "healthy"
+    ]
+  },
+  {
+    "case_id": "recovery-002",
+    "task": "Fetch the synthetic service payload. Retry a transient tool failure once if needed, then return the complete payload unchanged.",
+    "category": "recovery",
+    "difficulty": "medium",
+    "expected_answer": "合成载荷 1：成功。",
+    "expected_tool_sequence": [
+      "fetch",
+      "fetch"
+    ],
+    "assertions": [
+      {
+        "kind": "not_contains",
+        "value": "TOOL_FAILED"
+      }
+    ],
+    "fixtures": {
+      "failures_before_success": 1,
+      "payload": "合成载荷 1：成功。"
+    },
+    "timeout": 2.0,
+    "tags": [
+      "synthetic",
+      "seed-42",
+      "transient-error"
+    ]
+  },
+  {
+    "case_id": "long-input-016",
+    "task": "Plan and aggregate all 256 numeric values in the fixture. Return their exact sum, including zero for an empty array.",
+    "category": "long_input",
+    "difficulty": "hard",
+    "expected_answer": "77899",
+    "expected_tool_sequence": [
+      "aggregate"
+    ],
+    "assertions": [],
+    "fixtures": {
+      "values": [
+        4478,
+        8077,
+        4014,
+        8379,
+        -9684,
+        -6335,
+        -7535,
+        -5116,
+        7877,
+        -8820,
+        2098,
+        9087,
+        8105,
+        -5148,
+        4083,
+        -5824,
+        -8630,
+        101,
+        1948,
+        -8693,
+        1724,
+        -3117,
+        -1824,
+        -6632,
+        1589,
+        8346,
+        3316,
+        -4936,
+        -2243,
+        -4676,
+        -4199,
+        3510,
+        -9188,
+        -4123,
+        885,
+        3491,
+        -1869,
+        -1258,
+        -4784,
+        -6458,
+        2535,
+        -8732,
+        5423,
+        -2712,
+        -3461,
+        5083,
+        1457,
+        0,
+        -2543,
+        -2696,
+        -9225,
+        -3672,
+        3056,
+        756,
+        -871,
+        -7726,
+        -854,
+        1506,
+        6692,
+        3096,
+        7570,
+        851,
+        -9096,
+        -6221,
+        -1441,
+        -4149,
+        9024,
+        -1302,
+        -8747,
+        -6448,
+        9548,
+        4239,
+        1327,
+        278,
+        4299,
+        9864,
+        6758,
+        -6211,
+        2622,
+        8893,
+        -3772,
+        -1654,
+        -8546,
+        4288,
+        -9945,
+        7036,
+        7643,
+        -3544,
+        1934,
+        4132,
+        -7708,
+        819,
+        286,
+        -5917,
+        -160,
+        6617,
+        134,
+        3382,
+        688,
+        3185,
+        -312,
+        8166,
+        -5830,
+        -3714,
+        3777,
+        2423,
+        -4298,
+        8648,
+        -139,
+        3306,
+        7954,
+        -9987,
+        -43,
+        -599,
+        -3113,
+        4086,
+        9004,
+        9879,
+        559,
+        5236,
+        4476,
+        4488,
+        -2998,
+        6750,
+        5505,
+        -4440,
+        -7222,
+        -701,
+        6890,
+        983,
+        -6940,
+        -2304,
+        171,
+        -2639,
+        -3475,
+        -5172,
+        -9200,
+        -8486,
+        -1977,
+        5569,
+        -7614,
+        4923,
+        3580,
+        8863,
+        -3629,
+        2582,
+        6199,
+        3095,
+        -2006,
+        -5165,
+        -9819,
+        -6508,
+        3931,
+        -2830,
+        -4237,
+        6972,
+        5222,
+        -8355,
+        8265,
+        -1835,
+        -6024,
+        4957,
+        -5631,
+        5225,
+        7404,
+        8314,
+        9511,
+        397,
+        4502,
+        6540,
+        3983,
+        7952,
+        4611,
+        -4785,
+        5554,
+        4747,
+        -1507,
+        -1899,
+        -914,
+        7081,
+        5879,
+        -2161,
+        -1002,
+        4413,
+        -7462,
+        -638,
+        -2317,
+        -1097,
+        1005,
+        476,
+        7699,
+        -7360,
+        -5466,
+        -5058,
+        -2423,
+        2551,
+        -4993,
+        -2990,
+        -7896,
+        3594,
+        3356,
+        842,
+        7780,
+        5267,
+        3624,
+        -7960,
+        -3223,
+        3767,
+        2762,
+        9139,
+        -9360,
+        8864,
+        2464,
+        5629,
+        -9807,
+        1526,
+        -216,
+        2779,
+        3730,
+        7636,
+        7895,
+        9767,
+        -2774,
+        5998,
+        -2810,
+        -1057,
+        4281,
+        5913,
+        -9049,
+        2742,
+        1014,
+        3248,
+        -4592,
+        5315,
+        -5818,
+        7502,
+        -9117,
+        2911,
+        9395,
+        8493,
+        -9112,
+        -7250,
+        4044,
+        -5554,
+        5128,
+        -4046,
+        -8353,
+        -1476,
+        2422,
+        726,
+        -3065,
+        4899,
+        710,
+        1059,
+        2423,
+        -883
+      ]
+    },
+    "timeout": 2.0,
+    "tags": [
+      "synthetic",
+      "seed-42",
+      "length-256",
+      "aggregation"
+    ]
+  },
+  {
+    "case_id": "long-input-017",
+    "task": "The fixture is explicitly marked invalid. Use validation and return INVALID without aggregating its malformed values.",
+    "category": "long_input",
+    "difficulty": "medium",
+    "expected_answer": "INVALID",
+    "expected_tool_sequence": [
+      "validate"
+    ],
+    "assertions": [],
+    "fixtures": {
+      "invalid": true,
+      "values": null
+    },
+    "timeout": 2.0,
+    "tags": [
+      "synthetic",
+      "seed-42",
+      "invalid-input",
+      "flagged-validation"
+    ]
+  }
+]

@@ -1,0 +1,1018 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AgentOps · 评测工作台</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0a1220;
+        --panel: #111e31;
+        --line: #26374d;
+        --text: #e4edf6;
+        --muted: #93a6bb;
+        --teal: #57d6c4;
+        --red: #f19b99;
+        --blue: #7eaff9;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font:
+          14px/1.6 system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
+      }
+      button,
+      input,
+      select {
+        font: inherit;
+      }
+      button,
+      select {
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        background: #172840;
+        color: var(--text);
+        padding: 8px 10px;
+      }
+      button {
+        cursor: pointer;
+      }
+      button:hover {
+        border-color: var(--teal);
+      }
+      button:disabled {
+        opacity: 0.5;
+        cursor: wait;
+      }
+      select {
+        max-width: 100%;
+      }
+      a {
+        color: var(--teal);
+      }
+      .shell {
+        max-width: 1440px;
+        margin: auto;
+        padding: 32px;
+      }
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+      .eyebrow {
+        color: var(--teal);
+        font-size: 12px;
+        letter-spacing: 2px;
+        font-weight: 700;
+      }
+      h1 {
+        font-size: 30px;
+        letter-spacing: -1px;
+        margin: 3px 0;
+      }
+      h2 {
+        font-size: 17px;
+        margin: 0 0 15px;
+      }
+      p {
+        margin: 5px 0;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .pill {
+        font-size: 12px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 5px 12px;
+      }
+      .toolbar,
+      .filters,
+      .compare-controls {
+        display: flex;
+        gap: 14px;
+        align-items: end;
+        flex-wrap: wrap;
+      }
+      .toolbar {
+        margin: 28px 0 20px;
+      }
+      label {
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
+        color: var(--muted);
+        font-size: 12px;
+      }
+      label select {
+        font-size: 14px;
+        min-width: 150px;
+      }
+      .toolbar label {
+        flex: 1;
+        min-width: 250px;
+      }
+      .panel,
+      .metric {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+      }
+      .panel {
+        padding: 22px;
+        margin-bottom: 20px;
+      }
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+        margin-bottom: 20px;
+      }
+      .metric {
+        padding: 17px;
+      }
+      .metric-title {
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .metric-value {
+        font-size: 27px;
+        font-weight: 650;
+        margin: 5px 0;
+      }
+      .metric-detail {
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .check {
+        flex-direction: row;
+        align-items: center;
+        padding-bottom: 9px;
+      }
+      .filters {
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--line);
+        margin-bottom: 16px;
+      }
+      .status {
+        min-height: 22px;
+        color: var(--muted);
+        margin: 9px 0;
+      }
+      .error {
+        color: var(--red);
+      }
+      .bar-row {
+        display: grid;
+        grid-template-columns: 155px 1fr 30px;
+        gap: 10px;
+        align-items: center;
+        margin: 10px 0;
+        font-size: 12px;
+      }
+      .bar-track {
+        height: 10px;
+        background: #213248;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .bar {
+        height: 100%;
+        background: var(--teal);
+        border-radius: 4px;
+      }
+      .table-wrap {
+        overflow: auto;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 13px;
+      }
+      th {
+        text-align: left;
+        font-weight: 500;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+      td,
+      th {
+        padding: 12px 9px;
+        border-bottom: 1px solid var(--line);
+      }
+      td code {
+        color: var(--blue);
+      }
+      .good {
+        color: var(--teal);
+      }
+      .bad {
+        color: var(--red);
+      }
+      summary {
+        cursor: pointer;
+        padding: 10px 0;
+        color: var(--blue);
+      }
+      .detail {
+        padding: 0 12px 15px;
+        min-width: 450px;
+      }
+      .answer {
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        background: #0b1728;
+        border: 1px solid var(--line);
+        padding: 12px;
+        border-radius: 6px;
+        max-height: 160px;
+        overflow: auto;
+      }
+      .trace-row {
+        display: grid;
+        grid-template-columns: minmax(170px, 1fr) 1fr 90px;
+        gap: 10px;
+        padding: 7px 0;
+        align-items: center;
+        font-size: 12px;
+      }
+      .trace-label {
+        overflow-wrap: anywhere;
+      }
+      .trace-track {
+        height: 7px;
+        background: #20344d;
+        border-radius: 4px;
+      }
+      .trace-bar {
+        height: 7px;
+        background: var(--blue);
+        border-radius: 4px;
+        min-width: 2px;
+      }
+      .trace-bar.bad {
+        background: var(--red);
+      }
+      .trace-duration {
+        text-align: right;
+        color: var(--muted);
+      }
+      .annotation {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        flex-wrap: wrap;
+        margin-top: 15px;
+      }
+      .annotation select {
+        max-width: 230px;
+      }
+      .annotation-note {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .empty {
+        padding: 25px 0;
+        text-align: center;
+        color: var(--muted);
+      }
+      .compare-results {
+        margin-top: 15px;
+      }
+      .comparison-summary {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+      .comparison-value {
+        font-size: 23px;
+        font-weight: 600;
+        color: var(--teal);
+      }
+      .comparison-label {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .footer {
+        font-size: 12px;
+        color: var(--muted);
+        padding-bottom: 15px;
+      }
+      .run-meta {
+        overflow-wrap: anywhere;
+        font-size: 12px;
+      }
+      .badge {
+        display: inline-block;
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        padding: 1px 6px;
+        font-size: 11px;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+      }
+      :focus-visible {
+        outline: 2px solid var(--teal);
+        outline-offset: 3px;
+      }
+      @media (max-width: 900px) {
+        .metrics {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .shell {
+          padding: 20px;
+        }
+        .top {
+          align-items: flex-start;
+        }
+      }
+      @media (max-width: 500px) {
+        .shell {
+          padding: 14px;
+        }
+        .top {
+          flex-direction: column;
+        }
+        .metrics {
+          gap: 8px;
+        }
+        .metric {
+          padding: 12px;
+        }
+        .metric-value {
+          font-size: 23px;
+        }
+        .panel {
+          padding: 15px;
+        }
+        .comparison-summary {
+          grid-template-columns: 1fr;
+        }
+        .bar-row {
+          grid-template-columns: 120px 1fr 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="top">
+        <div>
+          <div class="eyebrow">AGENTOPS / EVALUATION PLATFORM</div>
+          <h1>评测工作台</h1>
+          <p class="muted">从实际执行结果，追踪每一次改进。</p>
+        </div>
+        <span class="pill">本地数据 · 合成基准</span>
+      </header>
+      <section class="toolbar" aria-label="运行选择">
+        <label
+          >选择已保存的 Run<select
+            id="run-select"
+            aria-label="选择运行"
+          ></select></label
+        ><button id="refresh" type="button">刷新数据</button>
+      </section>
+      <p id="status" class="status" role="status" aria-live="polite">
+        正在读取本地评测数据…
+      </p>
+      <div id="run-meta" class="run-meta muted"></div>
+      <section id="metrics" class="metrics" aria-label="评测指标"></section>
+      <div class="grid">
+        <section class="panel">
+          <h2>失败归因分布</h2>
+          <p class="muted">规则归因 · 当前筛选内的已执行结果</p>
+          <div id="failures"></div>
+        </section>
+        <section class="panel">
+          <h2>观测覆盖</h2>
+          <div id="coverage"></div>
+          <p class="muted">
+            N/A 表示未观测或没有适用样本；token 与费用均不估算。
+          </p>
+        </section>
+      </div>
+      <section class="panel">
+        <h2>Case 执行记录</h2>
+        <form id="filters" class="filters">
+          <label
+            >任务类别<select id="category">
+              <option value="">全部类别</option>
+              <option value="arithmetic">arithmetic</option>
+              <option value="retrieval">retrieval</option>
+              <option value="recovery">recovery</option>
+              <option value="long_input">long_input</option>
+            </select></label
+          >
+          <label
+            >难度<select id="difficulty">
+              <option value="">全部难度</option>
+              <option value="easy">easy</option>
+              <option value="medium">medium</option>
+              <option value="hard">hard</option>
+            </select></label
+          >
+          <label
+            >规则失败类型<select id="failure">
+              <option value="">全部归因</option>
+            </select></label
+          >
+          <label class="check"
+            ><input id="failures-only" type="checkbox" />仅失败 Case</label
+          ><button type="submit">应用筛选</button>
+        </form>
+        <p id="result-count" class="muted"></p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Case / Repeat</th>
+                <th>类别 / 难度</th>
+                <th>结果</th>
+                <th>规则归因</th>
+                <th>实际耗时</th>
+                <th>详情</th>
+              </tr>
+            </thead>
+            <tbody id="results"></tbody>
+          </table>
+        </div>
+      </section>
+      <section class="panel">
+        <h2>Baseline / Candidate 对比</h2>
+        <p class="muted">
+          按 Case 配对，以 Case 为聚类单元计算 bootstrap 95% 区间。
+        </p>
+        <form id="compare-form" class="compare-controls">
+          <label>Baseline<select id="baseline" required></select></label
+          ><label>Candidate<select id="candidate" required></select></label
+          ><label class="check"
+            ><input
+              id="allow-ablation"
+              type="checkbox"
+            />允许显式消融配置差异</label
+          ><button type="submit">比较运行</button>
+        </form>
+        <div
+          id="compare-status"
+          class="status"
+          role="status"
+          aria-live="polite"
+        ></div>
+        <div id="comparison" class="compare-results"></div>
+      </section>
+      <footer class="footer">
+        此工作台仅展示 SQLite
+        中已保存的数据。人工标注独立保存，不改写原始规则评分或配对对比。合成任务结果不代表生产
+        Agent 的业务能力。
+      </footer>
+    </main>
+    <script>
+      "use strict";
+      const $ = (id) => document.getElementById(id);
+      const failureNames = {
+        planning_error: "规划错误",
+        tool_selection_error: "工具选择错误",
+        argument_error: "参数错误",
+        tool_execution_error: "工具执行错误",
+        reasoning_error: "推理错误",
+        unsupported_claim: "无依据结论",
+        timeout: "超时",
+        unclassified: "未分类",
+      };
+      const state = { runId: null, annotations: new Map(), generation: 0 };
+      const node = (tag, text, className) => {
+        const item = document.createElement(tag);
+        if (text !== undefined) item.textContent = text;
+        if (className) item.className = className;
+        return item;
+      };
+      const value = (number, digits = 2) =>
+        number === null || number === undefined
+          ? "N/A"
+          : Number(number).toLocaleString("zh-CN", {
+              maximumFractionDigits: digits,
+            });
+      const percent = (number) =>
+        number === null || number === undefined
+          ? "N/A"
+          : `${(number * 100).toFixed(1)}%`;
+      const key = (item) => `${item.case_id}:${item.repeat}`;
+      async function api(path, options = {}) {
+        const response = await fetch(path, { cache: "no-store", ...options });
+        let data;
+        try {
+          data = await response.json();
+        } catch {
+          throw new Error("服务返回了无法识别的数据。");
+        }
+        if (!response.ok) throw new Error(data.error?.message || "请求失败。");
+        return data;
+      }
+      function message(id, text, error = false) {
+        $(id).textContent = text;
+        $(id).className = error ? "status error" : "status";
+      }
+      function option(select, label, selectedValue) {
+        const item = node("option", label);
+        item.value = selectedValue;
+        select.append(item);
+      }
+      function card(title, primary, detail) {
+        const item = node("article", undefined, "metric");
+        item.append(
+          node("div", title, "metric-title"),
+          node("div", primary, "metric-value"),
+          node("div", detail, "metric-detail"),
+        );
+        return item;
+      }
+      function renderMetrics(metrics) {
+        const target = $("metrics");
+        target.replaceChildren();
+        for (const [title, metric] of [
+          ["任务成功率", metrics.task_success_rate],
+          ["工具选择准确率", metrics.tool_selection_accuracy],
+          ["工具执行成功率", metrics.tool_execution_success],
+          ["超时率", metrics.timeout_rate],
+        ])
+          target.append(
+            card(
+              title,
+              percent(metric.value),
+              `${metric.numerator} / ${metric.denominator} 个有效观测`,
+            ),
+          );
+        target.append(
+          card(
+            "P50 延迟",
+            `${value(metrics.latency_ms.p50)} ms`,
+            `${metrics.latency_ms.denominator} 个执行结果`,
+          ),
+          card(
+            "P95 延迟",
+            `${value(metrics.latency_ms.p95)} ms`,
+            "包括失败与超时，排除 skipped",
+          ),
+          card(
+            "平均工具步数",
+            value(metrics.average_steps.value),
+            `${metrics.average_steps.numerator} 次工具调用 / ${metrics.average_steps.denominator} 次执行`,
+          ),
+          card(
+            "重复运行稳定率",
+            percent(metrics.stability.value),
+            `${metrics.stability.numerator} / ${metrics.stability.denominator} 个有重复观测的 Case`,
+          ),
+        );
+      }
+      function renderFailures(metrics) {
+        const target = $("failures");
+        target.replaceChildren();
+        const entries = Object.entries(metrics.failure_counts).sort(
+          (a, b) => b[1] - a[1],
+        );
+        if (!entries.length) {
+          target.append(node("p", "当前范围没有规则失败归因。", "empty"));
+          return;
+        }
+        const max = Math.max(...entries.map((entry) => entry[1]));
+        for (const [name, count] of entries) {
+          const row = node("div", undefined, "bar-row");
+          const track = node("div", undefined, "bar-track"),
+            bar = node("div", undefined, "bar");
+          bar.style.width = `${(count / max) * 100}%`;
+          track.append(bar);
+          row.append(
+            node("span", failureNames[name] || name),
+            track,
+            node("span", String(count)),
+          );
+          target.append(row);
+        }
+      }
+      function renderCoverage(metrics) {
+        const target = $("coverage");
+        target.replaceChildren();
+        for (const [label, text] of [
+          [
+            "执行范围",
+            `${metrics.evaluated} 已执行 / ${metrics.skipped} skipped`,
+          ],
+          [
+            "真实 Token",
+            `${value(metrics.token_usage.total, 0)} · ${metrics.token_usage.observed_model_calls}/${metrics.token_usage.model_calls} 次 model call 有观测`,
+          ],
+          [
+            "真实费用",
+            `${value(metrics.cost.total, 6)} · ${metrics.cost.observed_model_calls}/${metrics.cost.model_calls} 次 model call 有观测`,
+          ],
+          [
+            "重试事件",
+            `Runner ${metrics.runner_retries} · 工具 ${metrics.tool_retry_events}`,
+          ],
+        ]) {
+          const row = node("p");
+          row.append(node("span", `${label}：`, "muted"), node("span", text));
+          target.append(row);
+        }
+      }
+      function renderTrace(events) {
+        const section = node("div");
+        section.append(
+          node(
+            "p",
+            "Trace Timeline · 本地保存的父子关系与实际 span 耗时",
+            "muted",
+          ),
+        );
+        if (!events.length) {
+          section.append(node("p", "没有持久化 Trace。", "empty"));
+          return section;
+        }
+        const depths = new Map(),
+          max = Math.max(...events.map((event) => event.duration_ms), 0.001);
+        for (const event of events) {
+          const depth =
+            event.parent_span_id === null
+              ? 0
+              : (depths.get(event.parent_span_id) ?? -1) + 1;
+          depths.set(event.span_id, depth);
+          const row = node("div", undefined, "trace-row"),
+            label = node(
+              "span",
+              `${event.event_type}${event.tool_name ? ` · ${event.tool_name}` : ""} · ${event.status}`,
+              "trace-label",
+            );
+          label.style.paddingLeft = `${Math.min(depth, 20) * 14}px`;
+          label.title = `span ${event.span_id}; parent ${event.parent_span_id ?? "root"}; ${event.timestamp}; tokens ${value(event.token_usage, 0)}; cost ${value(event.cost, 6)}`;
+          const track = node("div", undefined, "trace-track"),
+            bar = node(
+              "div",
+              undefined,
+              `trace-bar${event.status !== "ok" ? " bad" : ""}`,
+            );
+          bar.style.width = `${(event.duration_ms / max) * 100}%`;
+          track.append(bar);
+          row.append(
+            label,
+            track,
+            node("span", `${value(event.duration_ms)} ms`, "trace-duration"),
+          );
+          section.append(row);
+        }
+        return section;
+      }
+      function annotationForm(result) {
+        const form = node("form", undefined, "annotation"),
+          label = node("label", "人工归因"),
+          select = node("select"),
+          button = node("button", "保存标注"),
+          note = node("span", undefined, "annotation-note");
+        select.setAttribute(
+          "aria-label",
+          `${result.case_id} repeat ${result.repeat} 人工失败归因`,
+        );
+        for (const [name, title] of Object.entries(failureNames))
+          option(select, `${title} / ${name}`, name);
+        const existing = state.annotations.get(key(result));
+        if (existing) select.value = existing;
+        note.textContent = existing
+          ? `已标注：${failureNames[existing]}`
+          : "尚未标注";
+        label.append(select);
+        button.type = "submit";
+        form.append(label, button, note);
+        const runId = state.runId;
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          button.disabled = true;
+          try {
+            await api(`/runs/${encodeURIComponent(runId)}/annotations`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                case_id: result.case_id,
+                repeat: result.repeat,
+                failure: select.value,
+              }),
+            });
+            if (runId === state.runId)
+              state.annotations.set(key(result), select.value);
+            note.textContent = `已标注：${failureNames[select.value]}（不覆盖规则指标）`;
+            note.className = "annotation-note good";
+          } catch (error) {
+            note.textContent = error.message;
+            note.className = "annotation-note bad";
+          } finally {
+            button.disabled = false;
+          }
+        });
+        return form;
+      }
+      function renderResults(run) {
+        const target = $("results");
+        target.replaceChildren();
+        $("result-count").textContent =
+          `显示 ${run.result_count.filtered} / ${run.result_count.total} 个 Case × Repeat；上方指标按当前筛选重新计算。`;
+        for (const result of run.results) {
+          const row = node("tr"),
+            identity = node("td"),
+            category = node("td"),
+            status = node("td"),
+            failure = node("td"),
+            latency = node("td"),
+            detailCell = node("td");
+          identity.append(
+            node("code", result.case_id),
+            node("div", `Repeat ${result.repeat}`, "muted"),
+          );
+          category.append(
+            node("span", result.category),
+            node("div", result.difficulty, "muted"),
+          );
+          const succeeded = result.success === true,
+            statusText =
+              result.status === "skipped"
+                ? "skipped"
+                : succeeded
+                  ? "成功"
+                  : result.success === false
+                    ? "失败"
+                    : "N/A";
+          status.append(
+            node(
+              "span",
+              statusText,
+              succeeded
+                ? "good"
+                : result.status === "skipped"
+                  ? "muted"
+                  : "bad",
+            ),
+            node("div", result.status, "muted"),
+          );
+          failure.textContent = result.failure
+            ? failureNames[result.failure] || result.failure
+            : "N/A";
+          latency.textContent = `${value(result.latency_ms)} ms`;
+          const details = node("details"),
+            summary = node("summary", "查看 Trace"),
+            content = node("div", undefined, "detail");
+          content.append(
+            node("p", `输出 · Attempts ${result.attempts}`, "muted"),
+            node(
+              "pre",
+              result.answer ?? "N/A · 当前运行未保存输出内容",
+              "answer",
+            ),
+            renderTrace(result.trace.events),
+            annotationForm(result),
+          );
+          details.append(summary, content);
+          detailCell.append(details);
+          row.append(identity, category, status, failure, latency, detailCell);
+          target.append(row);
+        }
+        if (!run.results.length) {
+          const row = node("tr"),
+            cell = node("td", "当前筛选没有结果。", "empty");
+          cell.colSpan = 6;
+          row.append(cell);
+          target.append(row);
+        }
+      }
+      function clearRun() {
+        for (const id of ["metrics", "failures", "coverage", "results"])
+          $(id).replaceChildren();
+        $("run-meta").textContent = "";
+        $("result-count").textContent = "";
+      }
+      async function loadRun() {
+        const runId = $("run-select").value;
+        if (!runId) return;
+        state.runId = runId;
+        const generation = ++state.generation;
+        clearRun();
+        message("status", "正在读取运行与 Trace…");
+        const params = new URLSearchParams();
+        for (const name of ["category", "difficulty", "failure"])
+          if ($(name).value) params.set(name, $(name).value);
+        if ($("failures-only").checked) params.set("failures_only", "true");
+        try {
+          const [run, annotations] = await Promise.all([
+            api(`/runs/${encodeURIComponent(runId)}?${params}`),
+            api(`/runs/${encodeURIComponent(runId)}/annotations`),
+          ]);
+          if (generation !== state.generation) return;
+          state.annotations = new Map(
+            annotations.annotations.map((item) => [key(item), item.failure]),
+          );
+          $("run-meta").textContent =
+            `${run.agent} · ${run.run_id} · seed ${run.config.seed} · repeats ${run.config.repeats} · ${new Date(run.created_at).toLocaleString("zh-CN")}`;
+          renderMetrics(run.metrics);
+          renderFailures(run.metrics);
+          renderCoverage(run.metrics);
+          renderResults(run);
+          message(
+            "status",
+            `已载入 ${run.result_count.filtered} 个持久化结果。`,
+          );
+        } catch (error) {
+          if (generation === state.generation)
+            message("status", error.message, true);
+        }
+      }
+      async function refresh() {
+        const button = $("refresh");
+        button.disabled = true;
+        try {
+          const { runs } = await api("/runs");
+          const previous = $("run-select").value;
+          const previousBaseline = $("baseline").value;
+          const previousCandidate = $("candidate").value;
+          for (const id of ["run-select", "baseline", "candidate"]) {
+            const select = $(id),
+              old = select.value;
+            select.replaceChildren();
+            for (const run of runs)
+              option(
+                select,
+                `${run.agent} · ${run.run_id.slice(0, 12)} · ${new Date(run.created_at).toLocaleString("zh-CN")}`,
+                run.run_id,
+              );
+            if (runs.some((run) => run.run_id === old)) select.value = old;
+          }
+          if (!runs.length) {
+            state.runId = null;
+            ++state.generation;
+            state.annotations.clear();
+            clearRun();
+            message(
+              "status",
+              "尚无已保存的 Run。请先通过 eval run 生成评测并保存到当前数据库。",
+            );
+            return;
+          }
+          if (runs.some((run) => run.run_id === previous))
+            $("run-select").value = previous;
+          const baselines = runs.filter((run) => run.agent === "baseline_v1");
+          const candidates = runs.filter((run) => run.agent === "candidate_v2");
+          let pair = null;
+          for (const baseline of baselines) {
+            const candidate = candidates.find((run) => {
+              if (run.dataset_digest !== baseline.dataset_digest) return false;
+              if (!run.config || !baseline.config) return false;
+              const fields = Object.keys(baseline.config);
+              return (
+                fields.length === Object.keys(run.config).length &&
+                fields.every(
+                  (field) => baseline.config[field] === run.config[field],
+                )
+              );
+            });
+            if (candidate) {
+              pair = { baseline, candidate };
+              break;
+            }
+          }
+          const retainedPair =
+            runs.some((run) => run.run_id === previousBaseline) &&
+            runs.some((run) => run.run_id === previousCandidate);
+          if (pair) {
+            if (!retainedPair) {
+              $("baseline").value = pair.baseline.run_id;
+              $("candidate").value = pair.candidate.run_id;
+            }
+            message("compare-status", "默认配对使用相同数据集和完整配置。");
+          } else {
+            message(
+              "compare-status",
+              "未找到数据集与配置完全一致的 Baseline / Candidate，已保留当前选择，请手动确认；消融比较需显式勾选。",
+            );
+          }
+          await loadRun();
+        } catch (error) {
+          message("status", error.message, true);
+        } finally {
+          button.disabled = false;
+        }
+      }
+      function comparisonResult(data) {
+        const target = $("comparison");
+        target.replaceChildren();
+        const summary = node("div", undefined, "comparison-summary");
+        for (const [label, primary] of [
+          [
+            "绝对成功率差值",
+            data.absolute_success_delta === null
+              ? "N/A"
+              : `${(data.absolute_success_delta * 100).toFixed(1)} pp`,
+          ],
+          [
+            "95% Bootstrap 区间",
+            data.bootstrap_ci_95
+              ? data.bootstrap_ci_95
+                  .map((n) => `${(n * 100).toFixed(1)} pp`)
+                  .join(" 至 ")
+              : "N/A",
+          ],
+          [
+            "有效配对 / Case 聚类",
+            `${data.paired_results} / ${data.case_clusters}`,
+          ],
+        ]) {
+          const item = node("div");
+          item.append(
+            node("div", primary, "comparison-value"),
+            node("div", label, "comparison-label"),
+          );
+          summary.append(item);
+        }
+        target.append(summary);
+        if (data.warning) target.append(node("p", data.warning, "muted"));
+        target.append(
+          node(
+            "p",
+            `显式配置变化：${data.changed_config.length ? data.changed_config.join(", ") : "无"}`,
+            "muted",
+          ),
+        );
+        const changed = data.rows.filter(
+            (row) => row.delta !== null && row.delta !== 0,
+          ),
+          details = node("details"),
+          title = node("summary", `${changed.length} 个配对结果发生变化`),
+          table = node("table"),
+          header = node("tr");
+        for (const text of ["Case / Repeat", "Baseline", "Candidate", "差值"])
+          header.append(node("th", text));
+        table.append(header);
+        for (const row of changed) {
+          const item = node("tr");
+          for (const text of [
+            `${row.case_id} / ${row.repeat}`,
+            String(row.baseline_success),
+            String(row.candidate_success),
+            String(row.delta),
+          ])
+            item.append(node("td", text));
+          table.append(item);
+        }
+        details.append(title, table);
+        target.append(details);
+      }
+      for (const [name, title] of Object.entries(failureNames))
+        option($("failure"), `${title} / ${name}`, name);
+      $("run-select").addEventListener("change", loadRun);
+      $("refresh").addEventListener("click", refresh);
+      $("filters").addEventListener("submit", (event) => {
+        event.preventDefault();
+        loadRun();
+      });
+      $("compare-form").addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const button = event.currentTarget.querySelector("button");
+        button.disabled = true;
+        message("compare-status", "正在计算配对对比…");
+        const params = new URLSearchParams({
+          baseline: $("baseline").value,
+          candidate: $("candidate").value,
+          allow_ablation: String($("allow-ablation").checked),
+        });
+        try {
+          comparisonResult(await api(`/compare?${params}`));
+          message("compare-status", "对比完成，差值为 Candidate − Baseline。");
+        } catch (error) {
+          $("comparison").replaceChildren();
+          message("compare-status", error.message, true);
+        } finally {
+          button.disabled = false;
+        }
+      });
+      refresh();
+    </script>
+  </body>
+</html>

@@ -56,10 +56,20 @@ class RunStore:
     def list(self, limit: int = 100) -> list[dict]:
         with self.connect() as connection:
             rows = connection.execute(
-                "SELECT run_id, created_at, agent FROM runs ORDER BY created_at DESC LIMIT ?",
+                "SELECT run_id, created_at, agent, json_extract(payload, '$.dataset_digest'), "
+                "json_extract(payload, '$.config') FROM runs ORDER BY created_at DESC LIMIT ?",
                 (limit,),
             ).fetchall()
-        return [dict(zip(("run_id", "created_at", "agent"), row, strict=True)) for row in rows]
+        return [
+            {
+                "run_id": row[0],
+                "created_at": row[1],
+                "agent": row[2],
+                "dataset_digest": row[3],
+                "config": json.loads(row[4]),
+            }
+            for row in rows
+        ]
 
     def annotate(self, run_id: str, case_id: str, repeat: int, failure: Failure) -> None:
         record = self.get(run_id)

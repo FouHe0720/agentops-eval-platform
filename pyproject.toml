@@ -12,7 +12,7 @@ license = "MIT"
 dependencies = ["pydantic>=2.10,<3", "httpx>=0.28,<0.29", "fastapi>=0.115,<1", "uvicorn>=0.34,<1"]
 
 [project.optional-dependencies]
-dev = ["pytest>=8.3,<10", "pytest-asyncio>=0.25,<2", "ruff>=0.11,<1"]
+dev = ["httpx2>=2.13,<3", "pytest>=8.3,<10", "pytest-asyncio>=0.25,<2", "ruff>=0.11,<1"]
 
 [project.scripts]
 eval = "agentops_eval.cli:main"

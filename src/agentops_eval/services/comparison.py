@@ -19,6 +19,10 @@ def compare_runs(
 ) -> dict[str, Any]:
     if baseline.dataset_digest != candidate.dataset_digest:
         raise ValueError("comparison requires identical cases and dataset digest")
+    if [c.model_dump(mode="json") for c in baseline.cases] != [
+        c.model_dump(mode="json") for c in candidate.cases
+    ]:
+        raise ValueError("comparison requires identical serialized cases")
     left, right = baseline.config.model_dump(), candidate.config.model_dump()
     allowed = {"planner", "tool_descriptions", "tool_retries"} if allow_ablation else set()
     changed = {key for key in left if left[key] != right[key]}

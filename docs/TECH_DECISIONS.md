@@ -10,3 +10,5 @@
 8. **真实消融的边界**：baseline_v1 采用基础工具选择且不做瞬态工具重试；candidate_v2 使用歧义消解和有限重试。Planner 开关改变多步执行策略。这些是可追踪的确定性执行路径差异，不宣称等同于真实 LLM 规划提升。runner retry 与工具内部 retry 分别计数。
 
 官方参考：[Pydantic validation](https://docs.pydantic.dev/latest/concepts/models/)、[HTTPX timeouts](https://www.python-httpx.org/advanced/timeouts/)、[FastAPI async tests](https://fastapi.tiangolo.com/advanced/async-tests/)。
+
+9. **测试客户端兼容性**：本次稳定版 Starlette 的 TestClient 推荐 httpx2，因此仅 dev extra 安装 httpx2；生产远端 Adapter 继续使用已测试的 httpx 0.28。依据 [Starlette TestClient 官方说明](https://www.starlette.io/testclient/)，避免依赖已弃用的测试路径；不隐藏测试警告。

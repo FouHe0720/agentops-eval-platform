@@ -1,0 +1,29 @@
+name: deterministic-regression
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: astral-sh/setup-uv@18d369b23da25a81e9458561248e1aafff6a70fa # v10.3.1
+        with:
+          version: "0.12.24"
+          enable-cache: true
+      - run: uv lock --check
+      - run: uv sync --frozen --extra dev
+      - run: make lint test regression
+      - name: Verify dataset generation
+        run: |
+          uv run --frozen python scripts/generate_dataset.py
+          git diff --exit-code -- datasets/
+      - run: uv run --frozen python scripts/privacy_check.py

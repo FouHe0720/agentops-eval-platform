@@ -1,0 +1,1 @@
+[{"case_id":"add-1","task":"Add 2 and 3","category":"arithmetic","difficulty":"easy","expected_answer":"5","expected_tool_sequence":["calculator"],"assertions":[],"fixtures":{"operation":"add","a":2,"b":3},"timeout":2.0,"tags":[]}]

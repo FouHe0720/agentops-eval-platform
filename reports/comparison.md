@@ -2,8 +2,8 @@
 
 Synthetic fixture benchmark; this is not evidence of production agent quality.
 
-Baseline run: `51a697c673bc41748cfca56265a9a731`
-Candidate run: `78d75bfba9f744d3b95e20a2c504c18e`
+Baseline run: `8ea0370c6e67442186efd572bce59571`
+Candidate run: `92a59864481841b49fc6e5da9ee9b3ea`
 
 Eligible case clusters: 100
 Absolute task success delta: 0.35

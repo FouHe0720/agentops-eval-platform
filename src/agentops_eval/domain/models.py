@@ -23,7 +23,7 @@ class Contract(BaseModel):
 
 
 class Assertion(Contract):
-    kind: Literal["contains", "not_contains", "equals"]
+    kind: Literal["contains", "not_contains", "equals", "source_quote"]
     value: str = Field(max_length=10000)
 
 

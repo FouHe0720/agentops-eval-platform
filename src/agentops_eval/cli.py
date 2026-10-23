@@ -19,6 +19,10 @@ from agentops_eval.services.runner import run_evaluation
 def get_adapter(name: str):
     if name in {"baseline", "baseline_v1", "candidate_v2"}:
         return DeterministicBaselineAgent("candidate_v2" if name == "baseline" else name)
+    if name == "campus_evidence":
+        from agentops_eval.adapters.campus import CampusEvidenceAdapter
+
+        return CampusEvidenceAdapter()
     if name == "openai":
         from agentops_eval.adapters.openai_compatible import OpenAICompatibleAdapter
 
@@ -41,7 +45,15 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--dataset", type=Path, required=True)
     run.add_argument(
         "--agent",
-        choices=["baseline", "baseline_v1", "candidate_v2", "workspace", "research", "openai"],
+        choices=[
+            "baseline",
+            "baseline_v1",
+            "candidate_v2",
+            "campus_evidence",
+            "workspace",
+            "research",
+            "openai",
+        ],
         default="baseline",
     )
     run.add_argument("--output", type=Path, default=Path("runtime/run.json"))

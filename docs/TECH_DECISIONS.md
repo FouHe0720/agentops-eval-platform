@@ -6,9 +6,9 @@
 4. **无 Judge 真值**：规则比较答案与断言，工具采用包含失败重试在内的严格调用顺序；无参考不计成功率，未实现能力跳过。工具协议错误与答案成功可以并存，指标分别显示。无法确定错误原因保持 unclassified，可附人工标注而不覆盖原始结果。
 5. **Paired case-cluster bootstrap**：相同 dataset SHA256、case/repeat、seed、运行配置；重复执行不是独立样本，先每 case 聚合 delta 再 bootstrap。少于 10 个 case 不给 CI。消融需要显式允许且只能变 planner/tool description/tool retry 三个参数。
 6. **内容最小化**：adapter 不接收 expected fields；默认落库和导出丢弃 task/fixtures/答案/任意 metadata 内容；token/cost 仅记录上游实际提供的观测。显式 sensitive trace 也进行常见密钥模式脱敏，不能保证任意秘密自动识别。
-7. **依赖与环境**：系统 Python 缺少 ensurepip，使用已有 uv 的项目级 `.venv`，未 sudo、未系统安装。pyproject 维护版本范围，uv.lock 固定本次解析；不使用 GPU 或模型权重。
+7. **依赖与环境**：依赖安装在项目级 `.venv`；pyproject 维护版本范围，uv.lock 固定解析结果。离线基线不使用 GPU 或模型权重。
 8. **真实消融的边界**：baseline_v1 采用基础工具选择且不做瞬态工具重试；candidate_v2 使用歧义消解和有限重试。Planner 开关改变多步执行策略。这些是可追踪的确定性执行路径差异，不宣称等同于真实 LLM 规划提升。runner retry 与工具内部 retry 分别计数。
 
 官方参考：[Pydantic validation](https://docs.pydantic.dev/latest/concepts/models/)、[HTTPX timeouts](https://www.python-httpx.org/advanced/timeouts/)、[FastAPI async tests](https://fastapi.tiangolo.com/advanced/async-tests/)。
 
-9. **测试客户端兼容性**：本次稳定版 Starlette 的 TestClient 推荐 httpx2，因此仅 dev extra 安装 httpx2；生产远端 Adapter 继续使用已测试的 httpx 0.28。依据 [Starlette TestClient 官方说明](https://www.starlette.io/testclient/)，避免依赖已弃用的测试路径；不隐藏测试警告。
+9. **测试客户端兼容性**：当前依赖组合的 Starlette TestClient 使用 httpx2，因此仅 dev extra 安装 httpx2；生产远端 Adapter 使用已测试的 httpx 0.28。依据 [Starlette TestClient 官方说明](https://www.starlette.io/testclient/)，避免依赖已弃用的测试路径；不隐藏测试警告。

@@ -47,3 +47,7 @@ dataset digest 基于未脱敏的规范化完整 case JSON；比较保存文件�
 ## 持久化边界
 
 正常执行完成后一次事务保存 run；trace JSONL 是真实执行 span 导出。突然 kill 或断电不保证进行中的 run 保存。没有分布式任务队列或自动恢复调度。HTTP Dashboard 读本地 SQLite，唯一写入口为显式人工标注，不提供运行任意命令或读取任意文件的接口。
+
+## 校园资料扩展
+
+`adapters/campus.py` 是独立的原文检索 Adapter；`source_quote` 断言由 `services/scoring.py` 验证已知文档编号及对应原文。数据重建脚本校验摘录指纹和段落一致性。Runner、统一隐私边界和比较规则保持共用，细节见 [校园场景](CAMPUS_SCENARIO.md)。

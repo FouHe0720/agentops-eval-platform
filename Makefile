@@ -17,3 +17,9 @@ serve:
 	$(EVAL) serve --db runtime/demo.db
 docker:
 	docker build -t agentops-eval-platform:local .
+
+.PHONY: campus-demo campus-serve
+campus-demo:
+	$(PY) scripts/demo_campus.py
+campus-serve:
+	$(EVAL) serve --db runtime/campus.db

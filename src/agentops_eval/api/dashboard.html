@@ -6,15 +6,15 @@
     <title>AgentOps · 评测工作台</title>
     <style>
       :root {
-        color-scheme: dark;
-        --bg: #0a1220;
-        --panel: #111e31;
-        --line: #26374d;
-        --text: #e4edf6;
-        --muted: #93a6bb;
-        --teal: #57d6c4;
-        --red: #f19b99;
-        --blue: #7eaff9;
+        color-scheme: light;
+        --bg: #f6f7f9;
+        --panel: #ffffff;
+        --line: #dfe4e9;
+        --text: #1e2938;
+        --muted: #607083;
+        --teal: #167565;
+        --red: #b5443c;
+        --blue: #365e91;
       }
       * {
         box-sizing: border-box;
@@ -38,7 +38,7 @@
       select {
         border: 1px solid var(--line);
         border-radius: 7px;
-        background: #172840;
+        background: #ffffff;
         color: var(--text);
         padding: 8px 10px;
       }
@@ -72,7 +72,7 @@
       .eyebrow {
         color: var(--teal);
         font-size: 12px;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
         font-weight: 700;
       }
       h1 {
@@ -103,6 +103,17 @@
         gap: 14px;
         align-items: end;
         flex-wrap: wrap;
+      }
+      .compare-controls > label:not(.check) {
+        flex: 1 1 200px;
+        min-width: 0;
+      }
+      .compare-controls select {
+        width: 100%;
+        min-width: 0;
+      }
+      .grid > * {
+        min-width: 0;
       }
       .toolbar {
         margin: 28px 0 20px;
@@ -187,7 +198,7 @@
       }
       .bar-track {
         height: 10px;
-        background: #213248;
+        background: #edf0f4;
         border-radius: 4px;
         overflow: hidden;
       }
@@ -218,6 +229,12 @@
       td code {
         color: var(--blue);
       }
+      .case-task {
+        max-width: 420px;
+        margin-bottom: 5px;
+        font-weight: 500;
+        color: var(--text);
+      }
       .good {
         color: var(--teal);
       }
@@ -236,7 +253,7 @@
       .answer {
         white-space: pre-wrap;
         overflow-wrap: anywhere;
-        background: #0b1728;
+        background: #f5f7f9;
         border: 1px solid var(--line);
         padding: 12px;
         border-radius: 6px;
@@ -256,7 +273,7 @@
       }
       .trace-track {
         height: 7px;
-        background: #20344d;
+        background: #edf0f4;
         border-radius: 4px;
       }
       .trace-bar {
@@ -381,15 +398,15 @@
     <main class="shell">
       <header class="top">
         <div>
-          <div class="eyebrow">AGENTOPS / EVALUATION PLATFORM</div>
+          <div class="eyebrow">AGENTOPS / 回归记录</div>
           <h1>评测工作台</h1>
-          <p class="muted">从实际执行结果，追踪每一次改进。</p>
+          <p class="muted">核对逐案结果，查看工具调用和失败原因。</p>
         </div>
-        <span class="pill">本地数据 · 合成基准</span>
+        <span class="pill" id="data-scope">本地评测记录</span>
       </header>
       <section class="toolbar" aria-label="运行选择">
         <label
-          >选择已保存的 Run<select
+          >选择评测记录<select
             id="run-select"
             aria-label="选择运行"
           ></select></label
@@ -399,6 +416,7 @@
         正在读取本地评测数据…
       </p>
       <div id="run-meta" class="run-meta muted"></div>
+      <p id="evaluation-note" class="muted"></p>
       <section id="metrics" class="metrics" aria-label="评测指标"></section>
       <div class="grid">
         <section class="panel">
@@ -415,7 +433,7 @@
         </section>
       </div>
       <section class="panel">
-        <h2>Case 执行记录</h2>
+        <h2>逐案执行记录</h2>
         <form id="filters" class="filters">
           <label
             >任务类别<select id="category">
@@ -440,7 +458,7 @@
             </select></label
           >
           <label class="check"
-            ><input id="failures-only" type="checkbox" />仅失败 Case</label
+            ><input id="failures-only" type="checkbox" />仅失败记录</label
           ><button type="submit">应用筛选</button>
         </form>
         <p id="result-count" class="muted"></p>
@@ -448,7 +466,7 @@
           <table>
             <thead>
               <tr>
-                <th>Case / Repeat</th>
+                <th>问题 / 案例</th>
                 <th>类别 / 难度</th>
                 <th>结果</th>
                 <th>规则归因</th>
@@ -461,13 +479,13 @@
         </div>
       </section>
       <section class="panel">
-        <h2>Baseline / Candidate 对比</h2>
+        <h2>版本对比</h2>
         <p class="muted">
           按 Case 配对，以 Case 为聚类单元计算 bootstrap 95% 区间。
         </p>
         <form id="compare-form" class="compare-controls">
-          <label>Baseline<select id="baseline" required></select></label
-          ><label>Candidate<select id="candidate" required></select></label
+          <label>基线版本<select id="baseline" required></select></label
+          ><label>候选版本<select id="candidate" required></select></label
           ><label class="check"
             ><input
               id="allow-ablation"
@@ -486,7 +504,7 @@
       <footer class="footer">
         此工作台仅展示 SQLite
         中已保存的数据。人工标注独立保存，不改写原始规则评分或配对对比。合成任务结果不代表生产
-        Agent 的业务能力。
+        Agent 的业务能力；历史资料引用检查不表示实时政策正确性。
       </footer>
     </main>
     <script>
@@ -549,11 +567,11 @@
         );
         return item;
       }
-      function renderMetrics(metrics) {
+      function renderMetrics(metrics, campus = false) {
         const target = $("metrics");
         target.replaceChildren();
         for (const [title, metric] of [
-          ["任务成功率", metrics.task_success_rate],
+          [campus ? "引用与拒答检查" : "任务成功率", metrics.task_success_rate],
           ["工具选择准确率", metrics.tool_selection_accuracy],
           ["工具执行成功率", metrics.tool_execution_success],
           ["超时率", metrics.timeout_rate],
@@ -733,6 +751,7 @@
         return form;
       }
       function renderResults(run) {
+        const cases = new Map(run.cases.map((item) => [item.case_id, item]));
         const target = $("results");
         target.replaceChildren();
         $("result-count").textContent =
@@ -745,6 +764,9 @@
             failure = node("td"),
             latency = node("td"),
             detailCell = node("td");
+          const task = cases.get(result.case_id)?.task;
+          if (task && task !== "[REDACTED]")
+            identity.append(node("div", task, "case-task"));
           identity.append(
             node("code", result.case_id),
             node("div", `Repeat ${result.repeat}`, "muted"),
@@ -830,9 +852,14 @@
           state.annotations = new Map(
             annotations.annotations.map((item) => [key(item), item.failure]),
           );
+          const campus = run.agent === "campus_evidence";
+          $("data-scope").textContent = campus ? "校园资料 · 引用回归" : "本地评测记录";
+          $("evaluation-note").textContent = campus
+            ? "当前检查历史资料的引用和拒答规则，未调用模型。通过率不代表模型问答准确率。"
+            : "指标按本次数据集和运行配置统计。未观测到的 token 和费用保留为空。";
           $("run-meta").textContent =
             `${run.agent} · ${run.run_id} · seed ${run.config.seed} · repeats ${run.config.repeats} · ${new Date(run.created_at).toLocaleString("zh-CN")}`;
-          renderMetrics(run.metrics);
+          renderMetrics(run.metrics, campus);
           renderFailures(run.metrics);
           renderCoverage(run.metrics);
           renderResults(run);

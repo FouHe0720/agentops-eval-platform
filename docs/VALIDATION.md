@@ -1,77 +1,60 @@
-# 真实验证记录
+# 验证记录
 
-日期：2026-10-22（Asia/Shanghai）。所有数字来自实际执行；本项目默认使用原创合成 fixtures，不是生产数据或真实模型成绩。
+## 2026-10-23：校园资料与回归
 
-## 阶段验收
+| 检查 | 结果 |
+| --- | --- |
+| `make lint test` | Ruff lint/format 通过；222 项 pytest 通过 |
+| `make regression` | 合成子集 10/10，答案与工具序列均通过 |
+| `make campus-demo` | 历史资料引用与拒答规则 17/17 |
+| `make demo` | 5 个配置 × 100 cases × 3 repeats；基线 195/300，候选 300/300，配对区间 [0.26, 0.44] |
+| 数据重建 | 校验 Markdown 指纹和段落一致性，输出可逐字节重建 |
+| 引用评分 | 伪造引用、空原文、畸形来源、范围过滤与评分参考隔离检查通过 |
 
-| 阶段 | 验收时实际结果 | Commit |
-|---|---|---|
-| V0 | 2 pytest passed；ruff；离线 CLI JSON 执行成功 | `140802d` |
-| V1 | 116 pytest passed，无 warnings；ruff；100×3 配对评测成功 | `cb0c5c4` |
-| V2 | 212 pytest passed，无 warnings；ruff；10-case regression；Docker 与浏览器验证 | `63da1d8` |
-| V3 | 213 tests；正式报告、干净环境 Quick Start、文档/截图/隐私审查、发布后验 | 最终提交见 Git 历史与下方记录 |
+校园基线没有模型调用，token/费用为 null。17/17 是确定性原文引用与拒答检查，不是模型问答准确率；两组数据独立运行。逐案摘要见 [`campus-regression.json`](../reports/campus-regression.json)，来源见 [`manifest.json`](../datasets/campus/sources/manifest.json)。
 
-## 环境与工程验证
+固定校园 Demo 对已审查摘录显式保留正文，以便工作台展示问题和原文。通用 CLI 默认仍删除正文。SQLite、完整 JSON/JSONL 与本地运行文件不随仓库发布。
 
-- WSL Linux；系统 Python 3.12.3，uv 项目环境为 CPython 3.12.15；Git 2.43.0、uv 0.12.24、Docker 29.8.2。
-- `make install`：锁定安装成功，项目级 `.venv`；未 sudo、未修改系统 Python/代理。
-- `make lint test regression`：213 tests passed，无 warnings；Ruff 静态与格式检查通过；10-case 答案与工具序列均 10/10。
-- `python scripts/generate_dataset.py` + `git diff --exit-code -- datasets/`：100/10 条数据逐字节再生，无差异。
-- `uv lock --check --offline`：通过。
-- `uv build`：sdist/wheel 构建成功，已检查 wheel 包含 `agentops_eval/api/dashboard.html`。
-- 临时干净 checkout（不含原 `.venv`、数据库、API key）重做 `make install`、`make demo`、`make lint test regression`；结果见本次验收，无需系统/云前置。
-- `scripts/privacy_check.py`：同时检查 index blobs 与工作树；6 个临时 Git 仓库测试包含“已暂存 secret，工作树已清理/删除”的回归。另人工检查 staged 文件列表、忽略规则、域名、环境变量与机器路径。
+工作台浏览器检查：1440 × 1200 桌面与 390 × 844 移动均无整页横向溢出、无 JavaScript 异常。展开第一条 Trace 可核对 `course-selection-2024:p6`，hard 筛选为 3 条，恢复后为 17 条。截图来自已保存的校园运行：
 
-## 合成运行与报告
+- [桌面工作台](assets/campus-dashboard.png)
+- [移动工作台](assets/campus-mobile.png)
 
-正式运行的 run_id、created_at、config、完整 metrics 在 [`run_manifest.json`](../reports/run_manifest.json)。固定 seed=42、100 cases、3 repeats，每种策略 300 个结果。
+本轮没有调用真实 LLM 或远端 Agent，也未重跑 Docker 和远端 CI。
 
-| 运行策略 | 任务成功 | 相对完整 candidate 的绝对差值 |
-|---|---:|---:|
+## 2026-10-22：合成实验
+
+环境：WSL Linux，CPython 3.12.15 项目环境，uv 0.12.24，Docker 29.8.2。使用锁文件安装、213 项测试、Ruff、数据重建、构建包和干净环境 Quick Start 均通过；wheel 包含 Dashboard HTML。
+
+固定 seed=42、100 cases、3 repeats，每个策略 300 个结果。运行身份和配置见 [`run_manifest.json`](../reports/run_manifest.json)，重跑会更新运行 ID 与实际耗时。
+
+| 策略 | 任务成功 | 相对完整候选的差值 |
+| --- | ---: | ---: |
 | baseline_v1 | 195 / 300 | −0.35 |
 | candidate_v2 | 300 / 300 | 0 |
 | no_planner | 222 / 300 | −0.26 |
 | basic_tool_descriptions | 240 / 300 | −0.20 |
 | no_tool_retries | 255 / 300 | −0.15 |
 
-baseline → candidate 的 paired delta=0.35，100 个 case clusters、2000 次 bootstrap、95% CI=[0.26,0.44]。无模型调用，tokens/cost=null。耗时来自真实 monotonic clock，随机器与调度变化，不用于模型性能宣传。
+基线与候选的 paired delta=0.35，100 个 case clusters、2,000 次 bootstrap 的 95% 区间为 [0.26, 0.44]。没有模型调用；本地执行耗时随机器与调度变化，不表示模型性能。失败来源是确定性的工具选择与瞬态恢复机制。
 
-[`example-trace.jsonl`](../reports/example-trace.jsonl) 从本次 candidate 的实际错误恢复 Case 导出；[`comparison.md`](../reports/comparison.md) 含逐 case/repeat 变化；[`ablations.md`](../reports/ablations.md) 含实际消融。
+[`example-trace.jsonl`](../reports/example-trace.jsonl) 保存实际恢复任务的 Trace；逐案变化见 [`comparison.md`](../reports/comparison.md)，单变量消融见 [`ablations.md`](../reports/ablations.md)。
 
-## Dashboard 浏览器验证
+## 容器、浏览器与 CI 历史记录
 
-临时安装 Playwright 于项目 `.venv`，使用已有 Chromium headless shell；缺失的 nspr/nss 和 CJK 字体仅下载、提取到忽略的 `runtime/browser-libs/`，未系统安装。产品和 CI 不依赖浏览器测试包。
+- Docker build、Compose 配置检查、禁网容器内 regression/Demo、非 root UID 10001、health 与 Dashboard 均通过。
+- Compose regression、100 × 3 Demo、启动健康检查、持久化 Run 查询与关闭流程通过；named volume 在 down 后保留。
+- 合成工作台已检查兼容 A/B 配对、差值和区间、失败筛选、Trace、独立人工归因及移动布局。动态内容使用 textContent，浏览器检查未禁用 CSP。
+- HTTP 与 OpenAI-compatible 协议由 MockTransport 检查，覆盖超时、HTTP 错误、redirect 拒绝、能力范围、Trace、usage/null 和凭证不回显；没有把它记作在线模型验证。
+- [首次远端 CI](https://github.com/FouHe0720/agentops-eval-platform/actions/runs/39727220508) 对提交 `9733246ac92cee11300ac7a798341ee594bea28d` 运行 Python 3.11/3.12/3.13，每个版本 213 项测试、Ruff、回归、数据重建和隐私审核通过。后续提交以实际 workflow 为准。
 
-实际浏览器验证：读取持久化 Runs、默认兼容 A/B 配对、+35 pp 和区间显示、baseline 失败筛选 105/300、Trace 展开、人工归因写入后显示、390px 移动布局。无 JavaScript 页面错误；CSP 未禁用。浏览器截图来自实际 SQLite 数据，不是生成图或 Mock UI；最终截图按 Asia/Shanghai 显示时间。
+## 可重复命令
 
-- [指标总览](assets/dashboard.png)
-- [真实比较结果](assets/comparison.png)
-- [层级 Trace](assets/trace.png)
-- [移动布局](assets/mobile.png)
+```bash
+make install
+make lint test regression
+make campus-demo
+.venv/bin/python scripts/privacy_check.py
+```
 
-浏览器中人工标注为演示写入，与原始规则评分分开保存；不改变合成报告指标。
-
-## Docker 验证
-
-- `docker compose config --quiet`、`docker build --check .`：通过，无 Dockerfile 警告。
-- `docker build -t agentops-eval-platform:local .`：实际成功。
-- 验证镜像 ID：`sha256:0ed08360f3ddd1011fdfe9a7bf4fa675d909dac5c5c7db839e7f60735230f938`（文档后续变化会改变重建 ID，非发布镜像摘要承诺）。
-- `docker run --rm --network none ... scripts/regression.py`：10/10 通过。
-- `docker run --rm --network none ... scripts/demo.py --dataset datasets/regression.json --repeats 1`：5 个 run、配对与三消融报告写入成功；默认 reports 目录可写。
-- 容器 `id -u`：10001；容器 `/health` 与 `/` HTTP 200，HTML/CSP 打包检查成功。临时 smoke 容器已停止并删除。
-- Compose 完整验收已通过：独立项目名及 named volume，regression、默认 100×3 Demo、`up --wait` healthy、API 读取 5 个持久化 Run、容器读取 5-run manifest、`down` 保留 volume。镜像来自上面的真实 Docker build。第一次使用的 `compose run --no-build` 参数在本机不支持，移除该参数后全部重新执行通过。
-
-## 网络与模型验证边界
-
-- Workspace/Research/OpenAI-compatible 实现：51 个 MockTransport 协议测试通过；网络超时、HTTP 错误、redirect 拒绝、能力范围、错误 trace、token usage/null 和凭证不回显已覆盖。
-- 未调用真实模型、Workspace 或 Research 服务；没有凭证/目标服务配置，不计作在线验证。可按 [连接契约](ADAPTER_CONTRACT.md) 和 [DEMO](DEMO.md) 的显式入口进行后续实测。
-- 页首 README badge 是实际 workflow 状态，不是手工“passed”标签。
-
-
-## GitHub 公开发布后验
-
-- GitHub CLI 操作账号实际核验为 `FouHe0720`。
-- 创建并普通推送至 [FouHe0720/agentops-eval-platform](https://github.com/FouHe0720/agentops-eval-platform)，`gh repo view` 返回 `visibility=PUBLIC`。
-- 首次 V3 推送为 `9733246ac92cee11300ac7a798341ee594bea28d`；本地 HEAD 与远端 main 一致，工作树干净。
-- [首次远端 CI 运行](https://github.com/FouHe0720/agentops-eval-platform/actions/runs/39727220508) 已实际 **success**：Python 3.11 / 3.12 / 3.13 三个 job 全通过，各自 213 tests、Ruff、10-case 回归、数据重建与隐私审核通过。
-- 本条验收记录通过后续普通增量提交补入；最终 HEAD 见仓库 Git 历史与实际 workflow badge。未使用 force push。
+完整合成运行使用 `make demo`；它会更新当前合成摘要和运行身份，不改写校园报告。隐私脚本同时检查索引和工作树，但模式扫描不能保证识别所有秘密，公开变更仍需审阅。

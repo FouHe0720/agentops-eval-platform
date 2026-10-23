@@ -1,0 +1,307 @@
+{
+  "dataset": "datasets/campus.json",
+  "dataset_digest": "4052698e5c7f6692c46e4cf143142525de70d0a846299a73f462d08ced5c9c97",
+  "run_id": "70833f21bc424a409dc2e4297f00a3ec",
+  "agent": "campus_evidence",
+  "created_at": "2026-10-23T10:06:52.156549+00:00",
+  "scope": "historical-source quote and refusal contracts; no model inference",
+  "metrics": {
+    "total_results": 17,
+    "evaluated": 17,
+    "skipped": 0,
+    "task_success_rate": {
+      "value": 1.0,
+      "numerator": 17,
+      "denominator": 17
+    },
+    "tool_selection_accuracy": {
+      "value": 1.0,
+      "numerator": 3,
+      "denominator": 3
+    },
+    "tool_execution_success": {
+      "value": 1.0,
+      "numerator": 44,
+      "denominator": 44
+    },
+    "average_steps": {
+      "value": 2.588235294117647,
+      "numerator": 44,
+      "denominator": 17
+    },
+    "latency_ms": {
+      "p50": 1.9044460000259278,
+      "p95": 3.461392199824331,
+      "mean": 2.066294999969935,
+      "denominator": 17
+    },
+    "token_usage": {
+      "total": null,
+      "observed_model_calls": 0,
+      "model_calls": 0
+    },
+    "cost": {
+      "total": null,
+      "observed_model_calls": 0,
+      "model_calls": 0
+    },
+    "timeout_rate": {
+      "value": 0.0,
+      "numerator": 0,
+      "denominator": 17
+    },
+    "stability": {
+      "value": null,
+      "numerator": 0,
+      "denominator": 0
+    },
+    "failure_counts": {},
+    "runner_retries": 0,
+    "tool_retry_events": 0
+  },
+  "cases": [
+    {
+      "case_id": "campus-selection-window",
+      "passed": true,
+      "failure": null,
+      "source_ids": [
+        "course-selection-2024"
+      ],
+      "source_sha256": {
+        "course-selection-2024": "61300492ab2add34118502e4472852c19cc21c191afc65107f49d14d5994b638"
+      },
+      "required_scope": {
+        "campus": "威海",
+        "year": 2024
+      }
+    },
+    {
+      "case_id": "campus-selection-plan",
+      "passed": true,
+      "failure": null,
+      "source_ids": [
+        "course-selection-2024"
+      ],
+      "source_sha256": {
+        "course-selection-2024": "61300492ab2add34118502e4472852c19cc21c191afc65107f49d14d5994b638"
+      },
+      "required_scope": {
+        "campus": "威海",
+        "year": 2024
+      }
+    },
+    {
+      "case_id": "campus-selection-general",
+      "passed": true,
+      "failure": null,
+      "source_ids": [
+        "course-selection-2024"
+      ],
+      "source_sha256": {
+        "course-selection-2024": "61300492ab2add34118502e4472852c19cc21c191afc65107f49d14d5994b638"
+      },
+      "required_scope": {
+        "campus": "威海",
+        "year": 2024
+      }
+    },
+    {
+      "case_id": "campus-english-exception",
+      "passed": true,
+      "failure": null,
+      "source_ids": [
+        "english-placement-2024"
+      ],
+      "source_sha256": {
+        "english-placement-2024": "a27687e723780290d31bfe4c3f58ba73203cd4c721fe4b6ef3082815928589d1"
+      },
+      "required_scope": {
+        "campus": "威海",
+        "year": 2024
+      }
+    },
+    {
+      "case_id": "campus-english-duration",
+      "passed": true,
+      "failure": null,
+      "source_ids": [
+        "english-placement-2024"
+      ],
+      "source_sha256": {
+        "english-placement-2024": "a27687e723780290d31bfe4c3f58ba73203cd4c721fe4b6ef3082815928589d1"
+      },
+      "required_scope": {
+        "campus": "威海",
+        "year": 2024
+      }
+    },
+    {
+      "case_id": "campus-navigation-quota",
+      "passed": true,
+      "failure": null,
+      "source_ids": [
+        "navigation-admission-2024"
+      ],
+      "source_sha256": {
+        "navigation-admission-2024": "f67fea51ac5e1244e322abce4dc90766ea47816d5b8c12396466c204652aa4fe"
+      },
+      "required_scope": {
+        "campus": "威海",
+        "year": 2024
+      }
+    },
+    {
+      "case_id": "campus-navigation-weight",
+      "passed": true,
+      "failure": null,
+      "source_ids": [
+        "navigation-admission-2024"
+      ],
+      "source_sha256": {
+        "navigation-admission-2024": "f67fea51ac5e1244e322abce4dc90766ea47816d5b8c12396466c204652aa4fe"
+      },
+      "required_scope": {
+        "campus": "威海",
+        "year": 2024
+      }
+    },
+    {
+      "case_id": "campus-data-science-scope",
+      "passed": true,
+      "failure": null,
+      "source_ids": [
+        "data-science-admission-2024"
+      ],
+      "source_sha256": {
+        "data-science-admission-2024": "0147fb7ed8a90604076959e9977c8d724ca1905718cd4618f28058ee7de95a9f"
+      },
+      "required_scope": {
+        "campus": "威海",
+        "year": 2024
+      }
+    },
+    {
+      "case_id": "campus-data-science-certificate",
+      "passed": true,
+      "failure": null,
+      "source_ids": [
+        "data-science-admission-2024"
+      ],
+      "source_sha256": {
+        "data-science-admission-2024": "0147fb7ed8a90604076959e9977c8d724ca1905718cd4618f28058ee7de95a9f"
+      },
+      "required_scope": {
+        "campus": "威海",
+        "year": 2024
+      }
+    },
+    {
+      "case_id": "campus-law-quota",
+      "passed": true,
+      "failure": null,
+      "source_ids": [
+        "computational-law-admission-2024"
+      ],
+      "source_sha256": {
+        "computational-law-admission-2024": "7263bb8ef001f329feba9b115951f8575c5f4b90954e3259a93100a1b61b7487"
+      },
+      "required_scope": {
+        "campus": "威海",
+        "year": 2024
+      }
+    },
+    {
+      "case_id": "campus-law-weight",
+      "passed": true,
+      "failure": null,
+      "source_ids": [
+        "computational-law-admission-2024"
+      ],
+      "source_sha256": {
+        "computational-law-admission-2024": "7263bb8ef001f329feba9b115951f8575c5f4b90954e3259a93100a1b61b7487"
+      },
+      "required_scope": {
+        "campus": "威海",
+        "year": 2024
+      }
+    },
+    {
+      "case_id": "campus-cs-duration",
+      "passed": true,
+      "failure": null,
+      "source_ids": [
+        "cs-curriculum-2024"
+      ],
+      "source_sha256": {
+        "cs-curriculum-2024": "299b6dcaa777996a43a61ad28cc04206ec1ead45601378b36e313689c188fdd9"
+      },
+      "required_scope": {
+        "campus": "威海",
+        "year": 2024
+      }
+    },
+    {
+      "case_id": "campus-ai-duration",
+      "passed": true,
+      "failure": null,
+      "source_ids": [
+        "ai-curriculum-2024"
+      ],
+      "source_sha256": {
+        "ai-curriculum-2024": "88a84f81cebc11ae816f6052c92825a99aa8b63e1dbaa37bb91a3342826e0de2"
+      },
+      "required_scope": {
+        "campus": "威海",
+        "year": 2024
+      }
+    },
+    {
+      "case_id": "campus-physics-credits",
+      "passed": true,
+      "failure": null,
+      "source_ids": [
+        "physics-curriculum-2023"
+      ],
+      "source_sha256": {
+        "physics-curriculum-2023": "d99972795b8cd008daca4f9a6bbc89464abf802cf73750f7f7ade98396ed8e85"
+      },
+      "required_scope": {
+        "campus": "威海",
+        "year": 2023
+      }
+    },
+    {
+      "case_id": "campus-unknown-topic",
+      "passed": true,
+      "failure": null,
+      "source_ids": [],
+      "source_sha256": {},
+      "required_scope": {
+        "campus": "威海",
+        "year": 2024
+      }
+    },
+    {
+      "case_id": "campus-wrong-campus",
+      "passed": true,
+      "failure": null,
+      "source_ids": [],
+      "source_sha256": {},
+      "required_scope": {
+        "campus": "青岛",
+        "year": 2024
+      }
+    },
+    {
+      "case_id": "campus-current-policy",
+      "passed": true,
+      "failure": null,
+      "source_ids": [],
+      "source_sha256": {},
+      "required_scope": {
+        "campus": "威海",
+        "year": 2026
+      }
+    }
+  ]
+}

@@ -19,6 +19,26 @@ def score(
     if case.expected_answer is not None:
         checks.append(response.answer.strip() == case.expected_answer.strip())
     for assertion in case.assertions:
+        if assertion.kind == "source_quote":
+            # The oracle is kept outside adapters. Require a known citation and
+            # its exact reviewed passage, rather than accepting an invented ID.
+            documents = case.fixtures.get("documents")
+            source = next(
+                (
+                    d
+                    for d in (documents if isinstance(documents, list) else [])
+                    if isinstance(d, dict) and d.get("id") == assertion.value
+                ),
+                None,
+            )
+            text = source.get("text") if source else None
+            checks.append(
+                isinstance(text, str)
+                and bool(text)
+                and f"[{assertion.value}]" in response.answer
+                and text in response.answer
+            )
+            continue
         checks.append(
             {
                 "contains": assertion.value in response.answer,

@@ -1,6 +1,6 @@
 # 离线演示与接入指南
 
-以下命令在 WSL 的项目根目录运行，使用 Bash、Python 3.11+、uv 和 make。安装依赖或首次构建镜像需要下载公开软件包；安装完成后的默认评测使用确定性 Agent 和内存 fixtures，不需要模型、GPU、API key 或付费服务。环境信息见 [ENVIRONMENT.md](ENVIRONMENT.md)。
+以下命令在 WSL 的项目根目录运行，使用 Bash、Python 3.11+、uv 和 make。安装依赖或首次构建镜像需要下载公开软件包；安装完成后的默认评测使用确定性 Agent 和内存 fixtures，不需要模型、GPU、API key 或付费服务。环境与验证记录见 [VALIDATION.md](VALIDATION.md)。
 
 ## 1. 安装与最小回归
 

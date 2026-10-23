@@ -1,4 +1,6 @@
-# Synthetic evaluation datasets
+# Evaluation datasets
+
+校园历史资料集见 [campus.json](campus.json) 和 [来源/评分说明](../docs/CAMPUS_SCENARIO.md)：17 个独立案例、8 份来源摘录，第三方原文不适用 MIT 授权。以下内容仅描述原有合成数据。
 
 这些是本项目人工设计模板、固定 seed 参数采样生成的**合成基准**，不是生产数据、真实用户请求或第三方 benchmark。所有文件名、文件内容、服务 payload 均由生成器构造，不读取主机文件、不访问网络、不包含个人信息。`files` 只是内存字典；`read_file` 只读取该字典中的值。
 

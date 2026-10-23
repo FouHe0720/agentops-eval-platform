@@ -6,7 +6,7 @@
 
 现在有两组数据：山东大学威海校区历史资料构成的校园查询回归集，以及用于验证执行机制的合成基准。两组独立运行、分别解释结果。
 
-[运行校园示例](#运行校园示例) · [资料与评分](docs/CAMPUS_SCENARIO.md) · [架构](docs/ARCHITECTURE.md) · [API 与适配器](docs/ADAPTER_CONTRACT.md)
+[完整使用手册](docs/USER_GUIDE.md) · [运行校园示例](#运行校园示例) · [资料与评分](docs/CAMPUS_SCENARIO.md) · [架构](docs/ARCHITECTURE.md) · [API 与适配器](docs/ADAPTER_CONTRACT.md)
 
 ## 校园查询场景
 
